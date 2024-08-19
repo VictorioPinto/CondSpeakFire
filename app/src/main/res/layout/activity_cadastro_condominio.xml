@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".cadastrodocondominio">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="116dp"
+        app:layout_constraintBottom_toTopOf="@id/idConponents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
+
+    <View
+        android:id="@+id/idConponents"
+        style="@style/ContainerComponents"
+        android:layout_width="354dp"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtVoltarConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idConponents"
+        app:layout_constraintVertical_bias="0.686" />
+
+    <EditText
+        android:id="@+id/edtnome"
+        style="@style/Edit_text"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+        android:layout_marginVertical="10dp"
+        android:drawableRight="@drawable/ic_eye"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="text"
+        android:textColorHint="#717171"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        style="@style/Edit_text"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="10dp"
+        android:drawableRight="@drawable/ic_email"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="text"
+        android:textColor="#808080"
+        android:textColorHighlight="#787878"
+        android:textColorHint="#6E6E6E"
+        app:circularflow_defaultRadius="20dp"
+        app:circularflow_radiusInDP="20dp"
+        app:layout_constraintBottom_toTopOf="@id/edtCnpj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtnome"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <EditText
+        android:id="@+id/edtCnpj"
+        style="@style/Edit_text"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+        android:drawableRight="@drawable/ic_eye"
+        android:hint="CNPJ"
+        android:inputType="text"
+        android:textColorHint="#717171"
+        app:layout_constraintBottom_toTopOf="@id/edtCep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+    <EditText
+        android:id="@+id/edtCep"
+        style="@style/Edit_text"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+        android:layout_marginVertical="10dp"
+        android:drawableRight="@drawable/ic_eye"
+        android:ems="10"
+        android:hint="CEP"
+        android:inputType="text"
+        android:textColorHint="#717171"
+        app:layout_constraintBottom_toTopOf="@id/edtNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCnpj"
+        app:layout_constraintVertical_bias="0.569" />
+
+    <EditText
+        android:id="@+id/edtNum"
+        style="@style/Edit_text"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom= "10dp"
+        android:drawableRight="@drawable/ic_eye"
+        android:ems="10"
+        android:hint="Número"
+        android:inputType="text"
+        android:textColorHint="#717171"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtCep" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCadastrar"
+        style="@style/botao"
+        android:layout_width="243dp"
+        android:layout_height="56dp"
+        android:text="Cadastrar"
+        app:layout_constraintBottom_toBottomOf="@id/idConponents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNum"
+        app:layout_constraintVertical_bias="0.825" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="210dp"
+        android:layout_height="80dp"
+        android:text="Cadastrar o condomínio"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/edtnome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/idConponents"
+        app:layout_constraintVertical_bias="0.225" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Cadastro.Codigo_Condominio">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="413dp"
+        android:layout_height="292dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/txtCadCond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="20dp"
+        android:text="Cadastrar Condominio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idconponents" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnentrar"
+        style="@style/botao"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+        android:text="Entrar"
+        app:layout_constraintBottom_toBottomOf="@id/idconponents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtCode" />
+
+    <View
+        android:id="@+id/idconponents"
+        style="@style/ContainerComponents"
+        android:layout_width="369dp"
+        android:layout_height="338dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:text="Entrar
+        no
+        condominio"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/edtCode"
+        app:layout_constraintEnd_toEndOf="@id/idconponents"
+        app:layout_constraintStart_toStartOf="@id/idconponents"
+        app:layout_constraintTop_toTopOf="@id/idconponents"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <EditText
+        android:id="@+id/edtCode"
+        style="@style/Edit_text"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:hint="Codigo"
+        android:inputType="text"
+        android:textColorHint="#717171"
+        app:layout_constraintBottom_toTopOf="@id/btnentrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="664dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
