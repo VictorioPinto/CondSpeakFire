@@ -13,6 +13,7 @@ fun bindCondominio(condominio: Condominio){
     cardCellBinding.proximapagina.setOnClickListener {
         val intent = Intent(itemView.context, Telaquaseprincipal::class.java)
         intent.putExtra("CodigoCondominio", condominio.codigo)
+        intent.putExtra("tipoUsuario", condominio.tipo)
         itemView.context.startActivity(intent)
     }
 

@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 
-class Tela_Principal : AppCompatActivity(){
+class Tela_Principal : AppCompatActivity() {
     private lateinit var binding: ActivityTelaPrincipalBinding
     private val condominioList = mutableListOf<Condominio>()
     private lateinit var firestoreListener: ListenerRegistration
@@ -44,23 +44,31 @@ class Tela_Principal : AppCompatActivity(){
 
         if (user != null) {
             firestoreListener = firebaseFirestore.collection("clientes").document(user)
-                .addSnapshotListener { documentSnapshot, error ->if (error != null) {
-                    Log.e("Tela_Principal", "Erro ao carregar dados do Firestore", error)
-                    return@addSnapshotListener
-                }
+                .addSnapshotListener { documentSnapshot, error ->
+                    if (error != null) {
+                        Log.e("Tela_Principal", "Erro ao carregar dados do Firestore", error)
+                        return@addSnapshotListener
+                    }
 
                     if (documentSnapshot != null && documentSnapshot.exists()) {
                         val codigos = documentSnapshot.get("codigo") as? List<String>
+                        val codigosDono = documentSnapshot.get("codigodono") as? List<String>
+
                         if (codigos != null) {
                             condominioList.clear()
-                            carregarCondominios(codigos)
+                            carregarCondominios(codigos, "cliente")
+                        }
+
+                        if (codigosDono != null) {
+                            carregarCondominios(codigosDono, "dono")
                         }
                     }
                 }
         }
+
     }
 
-    private fun carregarCondominios(codigos: List<String>) {
+    private fun carregarCondominios(codigos: List<String>, tipo: String) {
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("condominios")
 
@@ -70,12 +78,14 @@ class Tela_Principal : AppCompatActivity(){
                     val condominio = Condominio(
                         document.getString("nome").toString(),
                         document.getString("CEP").toString(),
-                        document.getString("codigo").toString()
+                        document.getString("codigo").toString(),
+                        tipo
                     )
-                    condominioList.add(condominio)
-                    binding.Recycleview.adapter?.notifyItemInserted(condominioList.size - 1)
-                } else {
-                    Log.w("Tela_Principal", "Condomínio com ID $condId não encontrado")
+
+                    if (!condominioList.contains(condominio)) {
+                        condominioList.add(condominio)
+                        binding.Recycleview.adapter?.notifyItemInserted(condominioList.size - 1)
+                    }
                 }
             }.addOnFailureListener { error ->
                 Log.e("Tela_Principal", "Erro ao carregar condomínio com ID $condId", error)

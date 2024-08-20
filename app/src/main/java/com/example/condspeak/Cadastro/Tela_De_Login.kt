@@ -13,12 +13,14 @@ import com.example.condspeak.R
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
+
+
 class Tela_De_Login : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var senhaEditText: EditText
     private lateinit var loginButton: Button
     private lateinit var criaConta: TextView
-
+    private lateinit var btnForgotPass : TextView
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +34,7 @@ class Tela_De_Login : AppCompatActivity() {
         emailEditText = findViewById(R.id.edtLogin)
         senhaEditText = findViewById(R.id.edtCep)
         loginButton = findViewById(R.id.btnLogar)
-
+        btnForgotPass = findViewById(R.id.txtSenha)
         auth = FirebaseAuth.getInstance()
         criaConta.setOnClickListener { chamaTelaCadastro() }
         loginButton.setOnClickListener {
@@ -58,6 +60,11 @@ class Tela_De_Login : AppCompatActivity() {
                     }
                 }
         }
+
+        btnForgotPass.setOnClickListener {
+            ForgotPass()
+        }
+
     }
     private fun chamaTelaCadastro() {
         startActivity(Intent(this, Tela_de_cadastro::class.java))
@@ -66,6 +73,23 @@ class Tela_De_Login : AppCompatActivity() {
         val intent = Intent(this, Codigo_Condominio::class.java)
         intent.putExtra("cliente_id", userId)
         startActivity(intent)
+    }
+
+    private fun ForgotPass()
+    {
+        if (!emailEditText.text.isEmpty())
+        {
+            FirebaseAuth.getInstance()
+                .sendPasswordResetEmail(emailEditText.text.toString()).addOnFailureListener {
+                    Toast.makeText(this@Tela_De_Login, "Email nao cadastrado", Toast.LENGTH_SHORT).show()
+                }.addOnSuccessListener {
+                    Toast.makeText(this, "Email enviado com sucesso", Toast.LENGTH_SHORT).show()
+                }
+
+
+        } else{
+            Toast.makeText(this, "Email vazio", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

@@ -19,6 +19,7 @@ class Telaquaseprincipal : AppCompatActivity() {
             insets
         }
         val CodigoCondominio = intent.getStringExtra("CodigoCondominio")
-        Log.d(CodigoCondominio, "CodigoCondominio")
+        val tipoUsuario = intent.getStringExtra("tipoUsuario")
+
     }
 }
