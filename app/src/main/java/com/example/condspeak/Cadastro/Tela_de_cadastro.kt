@@ -92,7 +92,8 @@ class Tela_de_cadastro : AppCompatActivity() {
             "senha" to senha.text.toString(),
             "telefone" to telefone.text.toString(),
             "cpf" to cpf.text.toString(),
-            "codigo" to emptyList<String>()
+            "codigo" to emptyList<String>(),
+            "codigodono" to emptyList<String>()
 
         )
         usuarioid = Firebase.auth.currentUser!!.uid

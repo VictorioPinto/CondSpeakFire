@@ -18,6 +18,7 @@ import com.example.condspeak.R
 import com.example.condspeak.selcionacond.Tela_Principal
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.firestore
 
 
@@ -106,11 +107,8 @@ class Cadastro_Condominio : AppCompatActivity() {
             }
     }
     private fun salvarnodono(usuarioId: String, codigo: String) {
-        val cliente = hashMapOf(
-            "codigodono" to listOf(codigo)
-        )
         val docRef = Firebase.firestore.collection("clientes").document(usuarioId)
-        docRef.update(cliente as Map<String, Any>)
+        docRef.update("codigodono", FieldValue.arrayUnion(codigo))
             .addOnSuccessListener {
                 Log.d("Firestore", "Campo adicionado com sucesso!")
             }
