@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CondSpeak"
         tools:targetApi="31">
         <activity
+            android:name=".chat.Chat_condominio"
+            android:exported="false" />
+        <activity
             android:name=".Telaquaseprincipal"
             android:exported="false" />
         <activity
