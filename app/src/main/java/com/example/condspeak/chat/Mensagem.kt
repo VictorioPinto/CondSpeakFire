@@ -1,10 +1,10 @@
 package com.example.condspeak.chat
 
-import com.google.firebase.firestore.FieldValue
+import com.google.firebase.Timestamp
 
 data class Mensagem(
     val remetente: String = "",
-    val destinatario: String= "",
+    val destinatario: String = "",
     val texto: String = "",
-    val timestamp: FieldValue = FieldValue.serverTimestamp()
+    val timestamp: Timestamp? = null
 )

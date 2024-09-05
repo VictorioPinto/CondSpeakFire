@@ -89,8 +89,8 @@ class Chat_condominio : AppCompatActivity() {
 
                     val mensagem = Mensagem(
                         texto = textoMensagem,
-                        remetente = nomeCliente,
-                        timestamp = FieldValue.serverTimestamp()
+                        remetente = nomeCliente
+                        // Remove: timestamp = FieldValue.serverTimestamp()
                     )
 
                     db.collection("chats")

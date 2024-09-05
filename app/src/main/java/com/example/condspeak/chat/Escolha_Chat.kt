@@ -42,13 +42,13 @@ class Escolha_Chat : AppCompatActivity() {
                 intent.putExtra("CodigoCondominio", CodigoCondominio)
                 intent.putExtra("tipoUsuario", tipoUsuario)
                 startActivity(intent)
-        }
+        }}
         btn2.text = "chat do condominio"
-            btn2.setOnClickListener {
+        btn2.setOnClickListener {
                 val intent = Intent(this, Chat_condominio::class.java)
                 intent.putExtra("CodigoCondominio", CodigoCondominio)
                 intent.putExtra("tipoUsuario", tipoUsuario)
                 startActivity(intent)
-            }
+        }
     }
-}}
+}

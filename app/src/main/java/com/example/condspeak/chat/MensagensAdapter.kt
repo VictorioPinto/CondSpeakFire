@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -19,21 +21,42 @@ class MensagensAdapter(private val mensagens: List<Mensagem>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_mensagem, parent, false)
+        val layout = if (viewType == MENSAGEM_DIREITA) {
+            R.layout.item_mensagem_direita
+        } else {
+            R.layout.item_mensagem_esquerda
+        }
+        val itemView = LayoutInflater.from(parent.context).inflate(layout, parent, false)
         return ViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    companion object {
+        private const val MENSAGEM_DIREITA = 0
+        private const val MENSAGEM_ESQUERDA = 1
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        val mensagem = mensagens[position]
+        val usuarioAtual = Firebase.auth.currentUser?.uid ?: ""
+
+        return if (mensagem.remetente == usuarioAtual) {
+            MENSAGEM_DIREITA
+        } else {
+            MENSAGEM_ESQUERDA
+        }
+    } // This closing brace was missing
+
+    override fun onBindViewHolder(holder: ViewHolder,position: Int) {
         val mensagem = mensagens[position]
         holder.remetenteTextView.text = mensagem.remetente
         holder.mensagemTextView.text = mensagem.texto
-        // Formatar o timestamp (mensagem.timestamp) antes de exibir
-        val timestamp = mensagem.timestamp as com.google.firebase.Timestamp
-        val date = timestamp.toDate()
-        val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
-        val formattedTimestamp = formatter.format(date)
-        holder.timestampTextView.text = formattedTimestamp
+
+        mensagem.timestamp?.let { timestamp ->
+            val date = timestamp.toDate()
+            val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
+            val formattedTimestamp = formatter.format(date)
+            holder.timestampTextView.text = formattedTimestamp
+        }
     }
 
     override fun getItemCount(): Int {
