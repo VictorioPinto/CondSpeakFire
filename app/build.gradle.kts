@@ -48,6 +48,8 @@ android {
 }
 
 dependencies {
+    implementation("androidx.compose.ui:ui:1.3.0")         // or latest version
+    implementation("androidx.compose.material:material:1.3.0")
     implementation("androidx.activity:activity:1.9.0")
     implementation(libs.firebase.crashlytics)
     implementation ("com.google.android.gms:play-services-auth:20.6.0")

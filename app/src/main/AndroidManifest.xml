@@ -17,7 +17,7 @@
         <activity android:name=".chat.Escolha_Chat"
             android:exported="false" />
         <activity
-            android:name=".chat.Chat_condominio"
+            android:name=".chat.chatusuariocindico.Chat_usuario_sindico"
             android:exported="false" />
         <activity
             android:name=".Telaquaseprincipal"

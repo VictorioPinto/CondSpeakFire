@@ -74,13 +74,9 @@ class Tela_De_Login : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, senha)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        // Login bem-sucedido
-                        val user = auth.currentUser
-                        val userId = user?.uid ?: ""
                         Toast.makeText(this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                        proximaTela(userId)
+                        proximaTela()
                     } else {
-                        // Falha no login
                         Toast.makeText(this, "Erro ao fazer login: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -101,9 +97,8 @@ class Tela_De_Login : AppCompatActivity() {
     private fun chamaTelaCadastro() {
         startActivity(Intent(this, Tela_de_cadastro::class.java))
     }
-    private fun proximaTela(userId: String) {
+    private fun proximaTela() {
         val intent = Intent(this, Codigo_Condominio::class.java)
-        intent.putExtra("cliente_id", userId)
         startActivity(intent)
     }
 
@@ -152,7 +147,7 @@ class Tela_De_Login : AppCompatActivity() {
                 auth.signInWithCredential(credential).addOnCompleteListener {
                     if (task.isSuccessful)
                     {
-                        proximaTela(auth.uid.toString())
+                        proximaTela()
                     }
                 }
             }
