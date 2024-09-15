@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,14 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CondSpeak"
-        tools:targetApi="31">
-        <activity android:name=".chat.Escolha_Chat"
+        tools:targetApi="31" >
+        <activity
+            android:name=".chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat"
             android:exported="false" />
         <activity
-            android:name=".chat.chatusuariocindico.Chat_usuario_sindico"
+            android:name=".chat.Escolha_Chat"
             android:exported="false" />
         <activity
-            android:name=".Telaquaseprincipal"
+            android:name=".chat.chatusuariocindico.codigochat.Chat_usuario_sindico"
+            android:exported="false" />
+        <activity
+            android:name=".extra.Telaquaseprincipal"
             android:exported="false" />
         <activity
             android:name=".selcionacond.CardViewHolder"
@@ -41,8 +45,8 @@
             android:name=".Cadastro.Tela_De_Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".extra.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

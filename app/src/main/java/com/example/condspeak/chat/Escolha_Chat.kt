@@ -9,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.R
-import com.example.condspeak.chat.chatusuariocindico.Chat_usuario_sindico
+import com.example.condspeak.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
+import com.example.condspeak.chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat
 
 class Escolha_Chat : AppCompatActivity() {
     lateinit var btn1 : Button
@@ -47,7 +48,7 @@ class Escolha_Chat : AppCompatActivity() {
 //        }}
         btn2.text = "chat do condominio"
         btn2.setOnClickListener {
-                val intent = Intent(this, Chat_usuario_sindico::class.java)
+                val intent = Intent(this, sindico_selecao_chat::class.java)
                 intent.putExtra("CodigoCondominio", CodigoCondominio)
                 intent.putExtra("tipoUsuario", tipoUsuario)
                 startActivity(intent)

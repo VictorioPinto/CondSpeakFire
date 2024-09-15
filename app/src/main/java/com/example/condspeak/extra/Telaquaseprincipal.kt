@@ -1,12 +1,11 @@
-package com.example.condspeak
+package com.example.condspeak.extra
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import kotlin.math.log
+import com.example.condspeak.R
 
 class Telaquaseprincipal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

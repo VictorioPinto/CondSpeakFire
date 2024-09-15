@@ -1,4 +1,4 @@
-package com.example.condspeak.chat.chatusuariocindico
+package com.example.condspeak.chat.chatusuariocindico.codigochat
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -34,13 +34,13 @@ class MensagemAdapter(private val mensagens: List<Mensagem>) :
     override fun onBindViewHolder(holder: MensagemViewHolder, position: Int) {
         val mensagem = mensagens[position]
 
-        // Formata a data e hora da mensagem
+
         val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
         val dataHoraFormatada = dateFormat.format(mensagem.timestamp)
 
-        holder.tvMensagem.text = "  ${dataHoraFormatada}/n${mensagem.conteudo}"
+        holder.tvMensagem.text = "  ${dataHoraFormatada} /n ${mensagem.conteudo}"
         Log.d("MensagemAdapter", "remetenteId: ${mensagem.remetenteId}, usuarioId: $usuarioId")
-        // Verifica se a view está inflada antes de definir o alinhamento
+
         if (mensagem.remetenteId == usuarioId) {
             holder.llMensagem.layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT
             (holder.llMensagem.layoutParams as LinearLayout.LayoutParams).gravity = Gravity.END

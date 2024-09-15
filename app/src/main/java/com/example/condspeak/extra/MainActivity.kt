@@ -1,4 +1,4 @@
-package com.example.condspeak
+package com.example.condspeak.extra
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.Cadastro.Codigo_Condominio
 import com.example.condspeak.Cadastro.Tela_De_Login
+import com.example.condspeak.R
 import com.example.condspeak.selcionacond.Tela_Principal
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

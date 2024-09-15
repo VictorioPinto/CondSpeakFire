@@ -1,4 +1,4 @@
-package com.example.condspeak.chat.chatusuariocindico
+package com.example.condspeak.chat.chatusuariocindico.codigochat
 
 import java.util.Date
 

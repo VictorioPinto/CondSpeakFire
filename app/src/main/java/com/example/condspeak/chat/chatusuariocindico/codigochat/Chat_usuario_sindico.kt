@@ -1,4 +1,4 @@
-package com.example.condspeak.chat.chatusuariocindico
+package com.example.condspeak.chat.chatusuariocindico.codigochat
 
 import android.os.Bundle
 import android.util.Log
@@ -39,15 +39,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
         codigoCondominio = intent.getStringExtra("CodigoCondominio") ?: "seila"
         Log.d("Chat", "Código do condomínio: $codigoCondominio")
         usuarioId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
-        if (
-            usuarioId == "XF5wOJbjThVWGQtBz1c38Pw6Vby2"
-        ){
-            iddapessoa = "CTG3eaRcuwhLmUj3qF2vfymt0CW2"
-//            iddapessoa = intent.getStringExtra("iddapessoa") ?: "CTG3eaRcuwhLmUj3qF2vfymt0CW2"
-        } else{
-            iddapessoa = "XF5wOJbjThVWGQtBz1c38Pw6Vby2"
-//            iddapessoa = intent.getStringExtra("iddapessoa") ?: "XF5wOJbjThVWGQtBz1c38Pw6Vby2"
-        }
+        iddapessoa = intent.getStringExtra("iddapessoa") ?: ""
 
 
         adapter = MensagemAdapter(mensagens)
@@ -56,7 +48,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
 
         btnEnviar.setOnClickListener { enviarMensagem() }
 
-        // Obter mensagens do Firestore
+
         obterMensagens()
     }
 
@@ -104,8 +96,6 @@ class Chat_usuario_sindico : AppCompatActivity() {
                         rvMensagens.scrollToPosition(mensagens.size - 1)
                     }
                 }
-        }else{
-
         }
     }
 
