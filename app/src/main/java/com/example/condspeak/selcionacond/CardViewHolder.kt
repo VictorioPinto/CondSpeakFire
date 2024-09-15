@@ -15,8 +15,6 @@ fun bindCondominio(condominio: Condominio){
         ValorGlobal.Codigo_Condominio = condominio.codigo
         ValorGlobal.tipoUsuario = condominio.tipo
         val intent = Intent(itemView.context, Escolha_Chat::class.java)
-        intent.putExtra("CodigoCondominio", condominio.codigo)
-        intent.putExtra("tipoUsuario", condominio.tipo)
         itemView.context.startActivity(intent)
     }
 

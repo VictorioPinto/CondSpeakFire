@@ -55,8 +55,6 @@ class Chat_condominio : AppCompatActivity() {
     }
 
     private fun obterMensagens() {
-        val tipoUsuario = ValorGlobal.tipoUsuario
-
         db.collection("chats")
             .document(codigoCondominio)
             .collection("mensagens")
@@ -82,17 +80,15 @@ class Chat_condominio : AppCompatActivity() {
     }
 
     private fun enviarMensagem() {
-        val tipoUsuario = ValorGlobal.tipoUsuario
         val conteudo = etMensagem.text.toString()
         if (conteudo.isNotBlank()) {
             val mensagem = Mensagem(
                 id = db.collection("chats").document().id,
                 remetenteId = usuarioId,
                 conteudo = conteudo,
-                timestamp = Date(System.currentTimeMillis()) // Converte Long para Date
+                timestamp = Date(System.currentTimeMillis())
             )
-
-                db.collection("chats").document(codigoCondominio)
+            db.collection("chats").document(codigoCondominio)
                     .collection("mensagens")
                     .document(mensagem.id)
                     .set(mensagem)
@@ -102,8 +98,6 @@ class Chat_condominio : AppCompatActivity() {
                     .addOnFailureListener { e ->
                         Log.w("Chat", "Erro ao enviar mensagem", e)
                     }
-
-
         }
     }
 }

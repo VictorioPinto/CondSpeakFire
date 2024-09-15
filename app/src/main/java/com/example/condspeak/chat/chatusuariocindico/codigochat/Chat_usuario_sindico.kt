@@ -40,7 +40,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
         codigoCondominio = ValorGlobal.Codigo_Condominio
         Log.d("Chat", "Código do condomínio: $codigoCondominio")
         usuarioId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
-        iddapessoa = intent.getStringExtra("iddapessoa") ?: ""
+        iddapessoa = intent.getStringExtra("idCliente") ?: ""
 
 
         adapter = MensagemAdapter(mensagens)

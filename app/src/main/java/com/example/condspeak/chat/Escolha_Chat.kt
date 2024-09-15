@@ -51,7 +51,7 @@ class Escolha_Chat : AppCompatActivity() {
                         Log.d("ID do Síndico", iddosindico)
 
                         val intent = Intent(this, Chat_usuario_sindico::class.java)
-                        intent.putExtra("iddapessoa", iddosindico)
+                        intent.putExtra("idCliente", iddosindico)
                         startActivity(intent)
                    }
         }}
