@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
+import com.example.condspeak.extra.ValorGlobal
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -36,7 +37,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
         btnEnviar = findViewById(R.id.btnEnviar)
 
 
-        codigoCondominio = intent.getStringExtra("CodigoCondominio") ?: "seila"
+        codigoCondominio = ValorGlobal.Codigo_Condominio
         Log.d("Chat", "Código do condomínio: $codigoCondominio")
         usuarioId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
         iddapessoa = intent.getStringExtra("iddapessoa") ?: ""
@@ -53,7 +54,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
     }
 
     private fun obterMensagens() {
-        val tipoUsuario = intent.getStringExtra("tipoUsuario")  ?: "cliente"
+        val tipoUsuario = ValorGlobal.tipoUsuario
         if (tipoUsuario == "dono") {
             db.collection("chats")
                 .document("${codigoCondominio}_${iddapessoa}_${usuarioId}")
@@ -100,7 +101,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
     }
 
     private fun enviarMensagem() {
-        val tipoUsuario = intent.getStringExtra("tipoUsuario")  ?: "cliente"
+        val tipoUsuario = ValorGlobal.tipoUsuario
         val conteudo = etMensagem.text.toString()
         if (conteudo.isNotBlank()) {
             val mensagem = Mensagem(
