@@ -10,6 +10,7 @@ import androidx.lifecycle.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
 import com.example.condspeak.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
+import com.example.condspeak.extra.ValorGlobal
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlin.io.path.exists
 
@@ -27,7 +28,7 @@ class sindico_selecao_chat : AppCompatActivity() {
         }
         recyclerView = findViewById(R.id.Recycleview)
 
-        codigoCondominio = intent.getStringExtra("CodigoCondominio") ?: "seila"
+        codigoCondominio = ValorGlobal.Codigo_Condominio
         buscarClientes(codigoCondominio)
     }
 

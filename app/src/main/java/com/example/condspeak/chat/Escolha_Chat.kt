@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.R
+import com.example.condspeak.chat.chatcondominio.Chat_condominio
 import com.example.condspeak.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
 import com.example.condspeak.chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat
 import com.example.condspeak.extra.ValorGlobal
@@ -30,6 +31,7 @@ class Escolha_Chat : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         btn1 = findViewById(R.id.button2)
         btn2 = findViewById(R.id.button3)
 
@@ -55,9 +57,7 @@ class Escolha_Chat : AppCompatActivity() {
         }}
         btn2.text = "chat do condominio"
         btn2.setOnClickListener {
-                val intent = Intent(this, sindico_selecao_chat::class.java)
-                intent.putExtra("CodigoCondominio", CodigoCondominio)
-                intent.putExtra("tipoUsuario", tipoUsuario)
+                val intent = Intent(this, Chat_condominio::class.java)
                 startActivity(intent)
         }
     }

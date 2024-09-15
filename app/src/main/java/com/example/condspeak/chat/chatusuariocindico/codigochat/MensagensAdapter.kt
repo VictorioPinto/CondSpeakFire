@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.compose.ui.semantics.text
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
 import com.google.firebase.auth.FirebaseAuth
@@ -38,7 +39,7 @@ class MensagemAdapter(private val mensagens: List<Mensagem>) :
         val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
         val dataHoraFormatada = dateFormat.format(mensagem.timestamp)
 
-        holder.tvMensagem.text = "  ${dataHoraFormatada} /n ${mensagem.conteudo}"
+        holder.tvMensagem.text = "  ${dataHoraFormatada} \n ${mensagem.conteudo}"
         Log.d("MensagemAdapter", "remetenteId: ${mensagem.remetenteId}, usuarioId: $usuarioId")
 
         if (mensagem.remetenteId == usuarioId) {

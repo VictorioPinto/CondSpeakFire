@@ -47,8 +47,6 @@ class Tela_de_reclamacao : AppCompatActivity() {
                 val titulo = titulo.text.toString()
                 val descricao = descricao.text.toString()
                 val mensagem = mensagem.text.toString()
-
-                // Obter dados do cliente e enviar email
                 val db = Firebase.firestore
                 val usuarioId = Firebase.auth.currentUser!!.uid
                 val docRef = db.collection("clientes").document(usuarioId)
@@ -113,10 +111,8 @@ class Tela_de_reclamacao : AppCompatActivity() {
                 )
 
                 Transport.send(message)
-                // Email enviado com sucesso
             } catch (e: MessagingException) {
                 e.printStackTrace()
-                // Erro ao enviar email
             }
         }
     }
