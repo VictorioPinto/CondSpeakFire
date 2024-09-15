@@ -17,8 +17,7 @@ class Telaquaseprincipal : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-//        val CodigoCondominio = intent.getStringExtra("CodigoCondominio")
-//        val tipoUsuario = intent.getStringExtra("tipoUsuario")
-
+       val CodigoCondominio = ValorGlobal.Codigo_Condominio
+       val tipoUsuario = ValorGlobal.tipoUsuario
     }
 }
