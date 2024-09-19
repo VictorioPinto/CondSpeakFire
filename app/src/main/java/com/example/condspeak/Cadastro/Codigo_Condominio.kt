@@ -62,7 +62,7 @@ class Codigo_Condominio : AppCompatActivity() {
         }
     }
 
-    // Função para abrir a tela de cadastro de condomínio
+
     private fun teladecadastrocondominio() {
         startActivity(Intent(this, Cadastro_Condominio::class.java))
     }
@@ -110,19 +110,24 @@ class Codigo_Condominio : AppCompatActivity() {
 
         docRef.get().addOnSuccessListener { document ->
             if (document != null && document.exists()) {
-
                 val idDosClientes = document.get("iddosclientes") as? MutableList<String> ?: mutableListOf()
 
-                idDosClientes.add(usuarioId)
+                if (!idDosClientes.contains(usuarioId)) { // Verifica se o ID já existe
+                    idDosClientes.add(usuarioId)
 
-                docRef.update("iddosclientes", idDosClientes)
-                    .addOnSuccessListener {
-                        Log.d("TAG", "Usuário adicionado ao documento com sucesso!")
-                        verificarlogar(usuarioId, codigo)
-                    }
-                    .addOnFailureListener { e ->
-                        Log.w("TAG", "Erro ao adicionar usuário ao documento", e)
-                    }
+                    docRef.update("iddosclientes", idDosClientes)
+                        .addOnSuccessListener {
+                            Log.d("TAG", "Usuário adicionado ao documento com sucesso!")
+                            verificarlogar(usuarioId, codigo)
+                            val intent = Intent(this, Tela_Principal::class.java)
+                            startActivity(intent)
+                        }
+                        .addOnFailureListener { e ->
+                            Log.w("TAG", "Erro ao adicionar usuário ao documento", e)
+                        }
+                } else {
+                    Log.d("TAG", "Usuário já está na lista do condomínio.")
+                }
             } else {
                 // TODO: Tratar caso o documento não exista (criar um novo documento)
             }

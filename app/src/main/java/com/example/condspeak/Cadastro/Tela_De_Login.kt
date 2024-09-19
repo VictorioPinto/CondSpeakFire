@@ -2,6 +2,7 @@ package com.example.condspeak.Cadastro
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentProviderClient
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.R
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.get
+import com.example.condspeak.selcionacond.Tela_Principal
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -24,6 +27,8 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlin.io.path.exists
 
 
 class Tela_De_Login : AppCompatActivity() {
@@ -98,8 +103,32 @@ class Tela_De_Login : AppCompatActivity() {
         startActivity(Intent(this, Tela_de_cadastro::class.java))
     }
     private fun proximaTela() {
-        val intent = Intent(this, Codigo_Condominio::class.java)
-        startActivity(intent)
+        val usuarioId = auth.currentUser?.uid ?: return
+
+        val db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("clientes").document(usuarioId)
+
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null && document.exists()) {
+                    val codigosCondominios = document.get("codigo") as? List<String> ?: emptyList()
+                    val codigosCondominios2 = document.get("codigodono") as? List<String> ?: emptyList()
+
+                    if (codigosCondominios.isNotEmpty()) {
+                        val intent = Intent(this, Tela_Principal::class.java)
+                        startActivity(intent)
+                    }else if(codigosCondominios2.isNotEmpty()){
+                        val intent = Intent(this, Tela_Principal::class.java)
+                        startActivity(intent)
+                    } else {
+                        val intent = Intent(this, Codigo_Condominio::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Erro ao verificar condomínios do usuário", exception)
+            }
     }
 
     private fun ForgotPass()

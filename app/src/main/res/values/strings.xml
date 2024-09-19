@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name" translatable="false">CondSpeak</string>
+    <string name="criar_aviso">Criar-Aviso</string>
 </resources>

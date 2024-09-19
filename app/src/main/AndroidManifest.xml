@@ -15,6 +15,15 @@
         android:theme="@style/Theme.CondSpeak"
         tools:targetApi="31">
         <activity
+            android:name=".Avisos.CriarAviso.Criar_avisos"
+            android:exported="false" />
+        <activity
+            android:name=".Avisos.CriarAviso.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Avisos.Quadrodeavisos.quadro_de_avisos"
+            android:exported="false" />
+        <activity
             android:name=".listademembros.Lista_de_Membros"
             android:exported="false" />
         <activity

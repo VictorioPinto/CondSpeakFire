@@ -41,12 +41,10 @@ class sindico_selecao_chat : AppCompatActivity() {
                 if (document != null && document.exists()) {
                     val idDosClientes = document.get("iddosclientes") as? List<String> ?: listOf()
                     buscarDadosClientes(idDosClientes)
-                } else {
-                    // Lidar com o caso em que o documento não existe
                 }
             }
             .addOnFailureListener { exception ->
-                // Lidar com erros
+
             }
     }
 
@@ -66,14 +64,13 @@ class sindico_selecao_chat : AppCompatActivity() {
                     }
                 }
                 .addOnFailureListener { exception ->
-                    // Lidar com erros
                 }
         }
     }
 
     private fun atualizarRecyclerView(pessoas: List<pessoa>) {
         val adapter = PessoaAdapter(pessoas) { pessoa ->
-            val intent = Intent(this, Chat_usuario_sindico::class.java) // Substitua ProximaActivity pela sua Activity
+            val intent = Intent(this, Chat_usuario_sindico::class.java)
             intent.putExtra("idCliente", pessoa.codigo)
             startActivity(intent)
         }

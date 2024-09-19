@@ -7,4 +7,74 @@
     android:layout_height="match_parent"
     tools:context=".extra.Telaquaseprincipal">
 
+    <Button
+        android:id="@+id/criaraviso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tela de aviso"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <Button
+        android:id="@+id/escolherchat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tela de escolherchat"
+        app:layout_constraintBottom_toTopOf="@+id/criaraviso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:id="@+id/lista_de_membros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tela de lista de membros"
+        app:layout_constraintBottom_toTopOf="@+id/criaraviso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:id="@+id/atualizarperfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tela atualizar perfil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/criaraviso"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/seleciona_condominio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tela seleciona condominio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/atualizarperfil"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/criaraviso"
+        app:layout_constraintVertical_bias="0.7" />
 </androidx.constraintlayout.widget.ConstraintLayout>

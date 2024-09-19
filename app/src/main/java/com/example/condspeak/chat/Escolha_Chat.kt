@@ -37,7 +37,7 @@ class Escolha_Chat : AppCompatActivity() {
 
         Log.d("Escolha_Chat", "Código do condomínio: $CodigoCondominio $tipoUsuario")
         if (tipoUsuario == "dono") {
-            btn1.text = "Chat com os moradores "
+            btn1.text = "Chat privado com os  moradores "
             btn1.setOnClickListener {
                 val intent = Intent(this, sindico_selecao_chat::class.java)
                 startActivity(intent)

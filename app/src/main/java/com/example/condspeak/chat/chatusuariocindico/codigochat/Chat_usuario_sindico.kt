@@ -108,7 +108,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
                 id = db.collection("chats").document().id,
                 remetenteId = usuarioId,
                 conteudo = conteudo,
-                timestamp = Date(System.currentTimeMillis()) // Converte Long para Date
+                timestamp = Date(System.currentTimeMillis())
             )
             if (tipoUsuario == "dono") {
                 db.collection("chats").document("${codigoCondominio}_${iddapessoa}_${usuarioId}")

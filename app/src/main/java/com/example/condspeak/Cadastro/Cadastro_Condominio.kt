@@ -110,6 +110,8 @@ class Cadastro_Condominio : AppCompatActivity() {
         val docRef = Firebase.firestore.collection("clientes").document(usuarioId)
         docRef.update("codigodono", FieldValue.arrayUnion(codigo))
             .addOnSuccessListener {
+                Intent(this, Tela_Principal::class.java)
+                startActivity(intent)
                 Log.d("Firestore", "Campo adicionado com sucesso!")
             }
             .addOnFailureListener { e ->
