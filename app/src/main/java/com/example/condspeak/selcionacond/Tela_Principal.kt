@@ -43,7 +43,7 @@ class Tela_Principal : AppCompatActivity() {
         val user = auth.currentUser?.uid
 
         if (user != null) {
-            firestoreListener = firebaseFirestore.collection("clientes").document(user)
+            firestoreListener = firebaseFirestore.collection("Users").document(user)
                 .addSnapshotListener { documentSnapshot, error ->
                     if (error != null) {
                         Log.e("Tela_Principal", "Erro ao carregar dados do Firestore", error)

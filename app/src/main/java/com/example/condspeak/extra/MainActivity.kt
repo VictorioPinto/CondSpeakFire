@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.Cadastro.Codigo_Condominio
-import com.example.condspeak.Cadastro.Tela_De_Login
+import com.example.condspeak.ui.login.TelaDeLogin
 import com.example.condspeak.R
 import com.example.condspeak.selcionacond.Tela_Principal
 import com.google.firebase.auth.FirebaseAuth
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 calmala(currentUser.uid)
 
             } else {
-                val intent = Intent(this, Tela_De_Login::class.java)
+                val intent = Intent(this, TelaDeLogin::class.java)
                 startActivity(intent)
             }
             finish()

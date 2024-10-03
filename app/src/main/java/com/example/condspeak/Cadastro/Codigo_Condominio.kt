@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.R
 import com.example.condspeak.selcionacond.Tela_Principal
+import com.example.condspeak.ui.registercondominio.CadastroCondominioActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FieldValue
@@ -64,7 +65,7 @@ class Codigo_Condominio : AppCompatActivity() {
 
 
     private fun teladecadastrocondominio() {
-        startActivity(Intent(this, Cadastro_Condominio::class.java))
+        startActivity(Intent(this, CadastroCondominioActivity::class.java))
     }
 
 

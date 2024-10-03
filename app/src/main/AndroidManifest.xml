@@ -15,10 +15,10 @@
         android:theme="@style/Theme.CondSpeak"
         tools:targetApi="31">
         <activity
-            android:name=".Avisos.CriarAviso.Criar_avisos"
+            android:name=".ui.perfil_user.Perfil_user"
             android:exported="false" />
         <activity
-            android:name=".Avisos.CriarAviso.MainActivity"
+            android:name=".Avisos.CriarAviso.Criar_avisos"
             android:exported="false" />
         <activity
             android:name=".Avisos.Quadrodeavisos.quadro_de_avisos"
@@ -48,16 +48,16 @@
             android:name=".selcionacond.Tela_Principal"
             android:exported="false" />
         <activity
-            android:name=".Cadastro.Cadastro_Condominio"
+            android:name=".ui.registercondominio.CadastroCondominioActivity"
             android:exported="false" />
         <activity
             android:name=".Cadastro.Codigo_Condominio"
             android:exported="false" />
         <activity
-            android:name=".Cadastro.Tela_de_cadastro"
+            android:name=".ui.register.Tela_de_cadastro"
             android:exported="false" />
         <activity
-            android:name=".Cadastro.Tela_De_Login"
+            android:name=".ui.login.TelaDeLogin"
             android:exported="false" />
         <activity
             android:name=".extra.MainActivity"

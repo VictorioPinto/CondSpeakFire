@@ -12,6 +12,7 @@ import com.example.condspeak.R
 import com.example.condspeak.chat.Escolha_Chat
 import com.example.condspeak.listademembros.Lista_de_Membros
 import com.example.condspeak.selcionacond.Tela_Principal
+import com.example.condspeak.ui.perfil_user.Perfil_user
 
 class Telaquaseprincipal : AppCompatActivity() {
 
@@ -50,7 +51,7 @@ class Telaquaseprincipal : AppCompatActivity() {
         }
 
         atualizarPerfilButton.setOnClickListener {
-//            startActivity(Intent(this, TelaDeAtualizarPerfil::class.java))
+            startActivity(Intent(this, Perfil_user::class.java))
         }
 
         selecionaCondominioButton.setOnClickListener {
