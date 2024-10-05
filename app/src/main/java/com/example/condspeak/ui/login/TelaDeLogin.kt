@@ -13,8 +13,8 @@ import com.example.condspeak.Cadastro.Codigo_Condominio
 import com.example.condspeak.R
 import com.example.condspeak.data.model.User
 import com.example.condspeak.databinding.ActivityTelaDeLoginBinding
-import com.example.condspeak.selcionacond.Tela_Principal
 import com.example.condspeak.ui.register.Tela_de_cadastro
+import com.example.condspeak.ui.selecionar_condominio.SelecionaCondominio
 import com.example.condspeak.viewmodel.UserViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -143,7 +143,7 @@ class TelaDeLogin : AppCompatActivity() {
             if (user == null || (user.codigo.isNullOrEmpty() && user.codigodono.isNullOrEmpty())) {
                 startActivity(Intent(this, Codigo_Condominio::class.java))
             } else {
-                startActivity(Intent(this, Tela_Principal::class.java))
+                startActivity(Intent(this, SelecionaCondominio::class.java))
             }
         }
     }

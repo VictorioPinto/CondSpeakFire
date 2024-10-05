@@ -7,8 +7,10 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.condspeak.R
-import com.example.condspeak.data.repository.CadastroRepository
-import com.example.condspeak.selcionacond.Tela_Principal
+
+import com.example.condspeak.data.repository.CondominioRepository
+import com.example.condspeak.ui.selecionar_condominio.SelecionaCondominio
+
 
 class CadastroCondominioActivity : AppCompatActivity(), CadastroView {
 
@@ -31,7 +33,7 @@ class CadastroCondominioActivity : AppCompatActivity(), CadastroView {
         numero = findViewById(R.id.edtNum)
         Cadastrar = findViewById(R.id.btnCadastrar)
 
-        val repository = CadastroRepository()
+        val repository = CondominioRepository()
         presenter = CadastroPresenter(this, repository)
 
         Cadastrar.setOnClickListener {
@@ -50,7 +52,7 @@ class CadastroCondominioActivity : AppCompatActivity(), CadastroView {
     }
 
     override fun goToMainScreen() {
-        val intent = Intent(this, Tela_Principal::class.java)
+        val intent = Intent(this, SelecionaCondominio::class.java)
         startActivity(intent)
     }
 }

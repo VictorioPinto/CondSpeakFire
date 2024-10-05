@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.R
-import com.example.condspeak.selcionacond.Tela_Principal
 import com.example.condspeak.ui.registercondominio.CadastroCondominioActivity
+import com.example.condspeak.ui.selecionar_condominio.SelecionaCondominio
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FieldValue
@@ -47,7 +47,7 @@ class Codigo_Condominio : AppCompatActivity() {
         entrar = findViewById(R.id.btnentrar)
         btnteste = findViewById(R.id.button)
         btnteste.setOnClickListener {
-            val intent = Intent(this, Tela_Principal::class.java)
+            val intent = Intent(this, SelecionaCondominio::class.java)
             startActivity(intent)
         }
 
@@ -120,7 +120,7 @@ class Codigo_Condominio : AppCompatActivity() {
                         .addOnSuccessListener {
                             Log.d("TAG", "Usuário adicionado ao documento com sucesso!")
                             verificarlogar(usuarioId, codigo)
-                            val intent = Intent(this, Tela_Principal::class.java)
+                            val intent = Intent(this, SelecionaCondominio::class.java)
                             startActivity(intent)
                         }
                         .addOnFailureListener { e ->
@@ -139,7 +139,7 @@ class Codigo_Condominio : AppCompatActivity() {
 
     private fun verificarlogar(usuarioId: String, codigo: String) {
         val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("clientes").document(usuarioId)
+        val docRef = db.collection("Users").document(usuarioId)
         docRef.update("codigo", FieldValue.arrayUnion(codigo))
             .addOnSuccessListener {
                 Log.d(TAG, "Itens adicionados à lista de codominios!")

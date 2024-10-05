@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.Cadastro.Codigo_Condominio
 import com.example.condspeak.ui.login.TelaDeLogin
 import com.example.condspeak.R
-import com.example.condspeak.selcionacond.Tela_Principal
+import com.example.condspeak.ui.selecionar_condominio.SelecionaCondominio
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun calmala(usuarioId: String) {
         val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("clientes").document(usuarioId)
+        val docRef = db.collection("Users").document(usuarioId)
 
         docRef.get()
             .addOnSuccessListener { document ->
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this, Codigo_Condominio::class.java)
                         startActivity(intent)
                     } else {
-                       val intent = Intent(this, Tela_Principal::class.java)
+                       val intent = Intent(this, SelecionaCondominio::class.java)
                         startActivity(intent)
                     }
                 } else {

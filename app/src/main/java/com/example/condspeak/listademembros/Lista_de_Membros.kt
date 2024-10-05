@@ -31,7 +31,7 @@ class Lista_de_Membros : AppCompatActivity() {
                 Log.d("TAG", "Código do dono: $codigodono")
 
 
-                db.collection("clientes").document(codigodono).get().addOnSuccessListener { sindicoDocument ->
+                db.collection("Users").document(codigodono).get().addOnSuccessListener { sindicoDocument ->
                     if (sindicoDocument != null && sindicoDocument.exists()) {
                         val nomeSindico = sindicoDocument.getString("nome") ?: ""
                         val emailSindico = sindicoDocument.getString("email") ?: ""
@@ -42,7 +42,7 @@ class Lista_de_Membros : AppCompatActivity() {
                     val totalConsultas = codigos.size
 
                     for (id in codigos) {
-                        db.collection("clientes").document(id).get().addOnSuccessListener { document ->
+                        db.collection("Users").document(id).get().addOnSuccessListener { document ->
                             if (document != null && document.exists()) {
                                 val nome = document.getString("nome") ?: ""
                                 val email = document.getString("email") ?: ""

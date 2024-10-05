@@ -1,10 +1,11 @@
 package com.example.condspeak.ui.registercondominio
 
 import com.example.condspeak.data.model.Condominio
-import com.example.condspeak.data.repository.CadastroRepository
+
+import com.example.condspeak.data.repository.CondominioRepository
 
 
-class CadastroPresenter(private val view: CadastroView, private val repository: CadastroRepository) {
+class CadastroPresenter(private val view: CadastroView, private val repository: CondominioRepository) {
 
     fun cadastro(nome: String, email: String, CNPJ: String, CEP: String, numero: String) {
         if (nome.isEmpty() || email.isEmpty() || CNPJ.isEmpty() || CEP.isEmpty() || numero.isEmpty()) {

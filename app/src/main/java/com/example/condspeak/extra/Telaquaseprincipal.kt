@@ -11,8 +11,8 @@ import com.example.condspeak.Avisos.CriarAviso.Criar_avisos
 import com.example.condspeak.R
 import com.example.condspeak.chat.Escolha_Chat
 import com.example.condspeak.listademembros.Lista_de_Membros
-import com.example.condspeak.selcionacond.Tela_Principal
 import com.example.condspeak.ui.perfil_user.Perfil_user
+import com.example.condspeak.ui.selecionar_condominio.SelecionaCondominio
 
 class Telaquaseprincipal : AppCompatActivity() {
 
@@ -55,7 +55,7 @@ class Telaquaseprincipal : AppCompatActivity() {
         }
 
         selecionaCondominioButton.setOnClickListener {
-            startActivity(Intent(this, Tela_Principal::class.java))
+            startActivity(Intent(this, SelecionaCondominio::class.java))
         }
 
         val CodigoCondominio = ValorGlobal.Codigo_Condominio

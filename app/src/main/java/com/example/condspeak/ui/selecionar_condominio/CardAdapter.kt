@@ -1,12 +1,12 @@
-package com.example.condspeak.selcionacond
+package com.example.condspeak.ui.selecionar_condominio
 
+import SelecionaCondominioModel
 import android.view.LayoutInflater
 import android.view.ViewGroup
-
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.databinding.CardCellBinding
 
-class CardAdapter(private val condominios: List<Condominio>) :
+class CardAdapter(private var condominios: List<SelecionaCondominioModel>) :
     RecyclerView.Adapter<CardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
@@ -18,6 +18,11 @@ class CardAdapter(private val condominios: List<Condominio>) :
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         holder.bindCondominio(condominios[position])
     }
+
     override fun getItemCount(): Int = condominios.size
 
+    fun updateCondominios(newCondominios: List<SelecionaCondominioModel>) {
+        condominios = newCondominios
+        notifyDataSetChanged()
+    }
 }
