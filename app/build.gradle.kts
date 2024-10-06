@@ -48,6 +48,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    val nav_version = "2.8.2"
     implementation("androidx.compose.ui:ui:1.3.0")         // or latest version
     implementation("androidx.compose.material:material:1.3.0")
     implementation("androidx.activity:activity:1.9.0")
@@ -68,6 +71,9 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation("com.sun.mail:android-mail:1.6.6")
     implementation("com.sun.mail:android-activation:1.6.7")
 

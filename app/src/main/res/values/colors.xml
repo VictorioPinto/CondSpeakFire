@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="cinzaclaro">#262626</color>
+    <color name="cinza">#1c1c1c</color>
+    <color name="cinzaescuro">#161616</color>
+    <color name="cinzaletra">#8c8c8c</color>
+    <color name="azulrt">#10e4f9</color>
+    <color name="branco">#ffffff</color>
+    <color name="cinzaborder">#303030</color>
+    <color name="preto">#050505</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="roxo">#9600ff</color>
-    <color name="verde">#466E58</color>
-    <color name="azul">#AEBAF8</color>
+    <color name="roxo">#FF9600FF</color>
+    <color name="verde">#FF466E58</color>
+    <color name="azul">#FFAEBAF8</color>
 </resources>

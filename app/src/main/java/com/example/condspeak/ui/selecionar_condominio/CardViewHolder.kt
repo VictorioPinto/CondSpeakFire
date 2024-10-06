@@ -4,6 +4,7 @@ import SelecionaCondominioModel
 import android.content.Intent
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
+import com.example.condspeak.Navi_Main
 import com.example.condspeak.extra.ValorGlobal
 import com.example.condspeak.databinding.CardCellBinding
 import com.example.condspeak.extra.Telaquaseprincipal
@@ -18,7 +19,7 @@ class CardViewHolder(private val cardCellBinding: CardCellBinding) :
             Log.d("CardViewHolder", condominio.codigo + condominio.tipo)
             ValorGlobal.Codigo_Condominio = condominio.codigo
             ValorGlobal.tipoUsuario = condominio.tipo.toString()
-            val intent = Intent(itemView.context, Telaquaseprincipal::class.java)
+            val intent = Intent(itemView.context, Navi_Main::class.java)
             itemView.context.startActivity(intent)
         }
     }

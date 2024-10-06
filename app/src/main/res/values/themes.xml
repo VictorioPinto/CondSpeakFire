@@ -3,7 +3,17 @@
     <style name="Base.Theme.CondSpeak" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/azulrt</item>
     </style>
 
     <style name="Theme.CondSpeak" parent="Base.Theme.CondSpeak" />
+
+    <style name="Theme.CondSpeak.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.CondSpeak.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.CondSpeak.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
