@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.compose.ui.semantics.text
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
+import com.example.condspeak.data.model.Mensagem
 import com.google.firebase.auth.FirebaseAuth
 import java.text.SimpleDateFormat
 import java.util.Locale

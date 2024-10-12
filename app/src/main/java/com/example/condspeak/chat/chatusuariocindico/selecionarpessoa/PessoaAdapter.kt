@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
+import com.example.condspeak.data.model.pessoa
 
 class PessoaAdapter(private val pessoas: List<pessoa>, private val onClickListener: (pessoa) -> Unit) :
     RecyclerView.Adapter<PessoaAdapter.PessoaViewHolder>() {

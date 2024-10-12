@@ -42,11 +42,11 @@ class Escolha_Chat : AppCompatActivity() {
                 val intent = Intent(this, sindico_selecao_chat::class.java)
                 startActivity(intent)
             }
-        } else if (tipoUsuario == "cliente") {
+        } else if (tipoUsuario == "Users") {
             btn1.text = "Chat com o sindico "
 
             btn1.setOnClickListener {
-                    db.collection("clientescondominio").document(CodigoCondominio).get().addOnSuccessListener {
+                    db.collection("UserCondominio").document(CodigoCondominio).get().addOnSuccessListener {
                         val iddosindico = it.get("iddono") as String
                         Log.d("ID do Síndico", iddosindico)
 

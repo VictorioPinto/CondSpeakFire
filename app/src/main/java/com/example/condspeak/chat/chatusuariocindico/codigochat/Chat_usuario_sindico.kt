@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
+import com.example.condspeak.data.model.Mensagem
 import com.example.condspeak.extra.ValorGlobal
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -76,7 +77,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
                         rvMensagens.scrollToPosition(mensagens.size - 1)
                     }
                 }
-        }else if (tipoUsuario == "cliente"){
+        }else if (tipoUsuario == "Users"){
             db.collection("chats")
                 .document("${codigoCondominio}_${usuarioId}_${iddapessoa}")
                 .collection("mensagens")
@@ -122,7 +123,7 @@ class Chat_usuario_sindico : AppCompatActivity() {
                         Log.w("Chat", "Erro ao enviar mensagem", e)
                     }
             }
-            else if (tipoUsuario == "cliente"){
+            else if (tipoUsuario == "Users"){
                 db.collection("chats").document("${codigoCondominio}_${usuarioId}_${iddapessoa}")
                     .collection("mensagens")
                     .document(mensagem.id)

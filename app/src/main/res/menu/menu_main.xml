@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/menu_avisos"
-        android:title="@string/menu_bottom_bar_escolha_chat"
-        android:icon="@drawable/ic_menu_home"/>
-    <item android:id="@+id/menu_chat"
-        android:title="@string/menu_bottom_bar_escolha_chat"
-        android:icon="@drawable/ic_menu_home"/>
-    <item android:id="@+id/menu_reclamacao"
+    <item android:id="@+id/bottom_avisos"
         android:title="@string/menu_bottom_bar_avisos"
         android:icon="@drawable/ic_menu_home"/>
-    <item android:id="@+id/chat_condominio"
-        android:title="@string/menu_bottom_bar_reclamacao"
+    <item android:id="@+id/bottom_chat"
+        android:title="@string/menu_bottom_bar_escolha_chat"
         android:icon="@drawable/ic_menu_home"/>
-
+    <item android:id="@+id/bottom_user"
+        android:title="@string/perfil"
+        android:icon="@drawable/ic_menu_home"/>
 
 </menu>

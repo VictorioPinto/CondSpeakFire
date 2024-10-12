@@ -23,7 +23,7 @@ class Lista_de_Membros : AppCompatActivity() {
     }
     fun seila(codigo: String) {
         val membros = mutableListOf<Model_Membros>()
-        db.collection("clientescondominio").document(codigo).get().addOnSuccessListener { documentSnapshot ->
+        db.collection("UserCondominio").document(codigo).get().addOnSuccessListener { documentSnapshot ->
             if (documentSnapshot != null && documentSnapshot.exists()) {
                 val codigos = documentSnapshot.get("iddosclientes") as? List<String> ?: emptyList()
                 val codigodono = documentSnapshot.get("iddono") as? String ?: ""

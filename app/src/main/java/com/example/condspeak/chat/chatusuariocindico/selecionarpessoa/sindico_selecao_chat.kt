@@ -6,13 +6,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
 import com.example.condspeak.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
+import com.example.condspeak.data.model.pessoa
 import com.example.condspeak.extra.ValorGlobal
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlin.io.path.exists
 
 class sindico_selecao_chat : AppCompatActivity() {
     private lateinit var codigoCondominio: String
@@ -34,7 +33,7 @@ class sindico_selecao_chat : AppCompatActivity() {
 
     private fun buscarClientes(codigoCondominio: String) {
         val db = FirebaseFirestore.getInstance()
-        db.collection("clientescondominio")
+        db.collection("UserCondominio")
             .document(codigoCondominio)
             .get()
             .addOnSuccessListener { document ->
@@ -52,7 +51,7 @@ class sindico_selecao_chat : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance()
         val pessoas = mutableListOf<pessoa>()
         for (id in idsClientes) {
-            db.collection("clientes")
+            db.collection("Users")
                 .document(id)
                 .get()
                 .addOnSuccessListener { document ->

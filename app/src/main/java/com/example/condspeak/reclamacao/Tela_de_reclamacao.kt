@@ -49,7 +49,7 @@ class Tela_de_reclamacao : AppCompatActivity() {
                 val mensagem = mensagem.text.toString()
                 val db = Firebase.firestore
                 val usuarioId = Firebase.auth.currentUser!!.uid
-                val docRef = db.collection("clientes").document(usuarioId)
+                val docRef = db.collection("Users").document(usuarioId)
 
                 docRef.get()
                     .addOnSuccessListener { document ->

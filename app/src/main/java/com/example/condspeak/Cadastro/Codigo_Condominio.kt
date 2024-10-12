@@ -106,7 +106,7 @@ class Codigo_Condominio : AppCompatActivity() {
 
         val db = FirebaseFirestore.getInstance()
 
-        val docRef = db.collection("clientescondominio").document(codigo)
+        val docRef = db.collection("UserCondominio").document(codigo)
 
 
         docRef.get().addOnSuccessListener { document ->
