@@ -4,12 +4,14 @@ package com.example.condspeak.data.repository
 import SelecionaCondominioModel
 import android.util.Log
 import com.example.condspeak.data.model.Condominio
+import com.example.condspeak.data.model.Model_Membros
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ListenerRegistration
+import kotlinx.coroutines.tasks.await
 
 
 class CondominioRepository {
@@ -93,5 +95,33 @@ class CondominioRepository {
                 Log.e("CondominioRepository", "Erro ao carregar condomínio com ID $condId", error)
             }
         }
+    }
+    suspend fun obterMembros(codigoCondominio: String): List<Model_Membros> {
+        val membros = mutableListOf<Model_Membros>()
+
+        val documento = db.collection("UserCondominio").document(codigoCondominio).get().await()
+        if (documento.exists()) {
+            val codigos = documento.get("iddosclientes") as? List<String> ?: emptyList()
+            val codigodono = documento.getString("iddono") ?: ""
+
+            val sindicoDocumento = db.collection("Users").document(codigodono).get().await()
+            if (sindicoDocumento.exists()) {
+                val nomeSindico = sindicoDocumento.getString("nome") ?: ""
+                val emailSindico = sindicoDocumento.getString("email") ?: ""
+                membros.add(Model_Membros(codigodono, nomeSindico, emailSindico, "Dono"))
+            }
+
+            for (id in codigos) {
+                val documentoMembro = db.collection("Users").document(id).get().await()
+                if (documentoMembro.exists()) {
+                    val nome = documentoMembro.getString("nome") ?: ""
+                    val email = documentoMembro.getString("email") ?: ""
+                    val tipo = if (id == codigodono) "Dono" else "Morador"
+                    membros.add(Model_Membros(id, nome, email, tipo))
+                }
+            }
+        }
+
+        return membros
     }
 }

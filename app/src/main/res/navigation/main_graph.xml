@@ -16,12 +16,12 @@
         tools:layout="@layout/fragment_chat_condominio" />
     <fragment
         android:id="@+id/menu_reclamacao"
-        android:name="com.example.condspeak.Escolha_chat_Fragment"
+        android:name="com.example.condspeak.ui.chat.Escolha_chat_Fragment"
         android:label="fragment_escolha_chat"
         tools:layout="@layout/fragment_escolha_chat" />
     <fragment
         android:id="@+id/chat_condominio"
-        android:name="com.example.condspeak.Reclamacao_Fragment"
+        android:name="com.example.condspeak.ui.Nav_drawer.reclamacao.Reclamacao_Fragment"
         android:label="fragment_reclamacao_"
         tools:layout="@layout/fragment_reclamacao_" />
 </navigation>

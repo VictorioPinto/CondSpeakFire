@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.selecionar_condominio.SelecionaCondominio">
+    tools:context=".ui.Nav_drawer.selecionar_condominio.SelecionaCondominio">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Recycleview"

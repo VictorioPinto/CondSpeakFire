@@ -15,58 +15,49 @@
         android:theme="@style/Theme.CondSpeak"
         tools:targetApi="31">
         <activity
-            android:name=".Drawer_and_Bottom_Nav"
+            android:name=".ui.Navigation.Drawer_and_Bottom_Nav"
             android:exported="false" />
         <activity
-            android:name=".NavigationDr"
-            android:exported="false"
-            android:label="@string/title_activity_navigation_dr"
-            android:theme="@style/Theme.CondSpeak.NoActionBar" />
-        <activity
-            android:name=".Navi_Main"
-            android:exported="false"
-            android:theme="@style/Theme.CondSpeak" />
-        <activity
-            android:name=".ui.selecionar_condominio.SelecionaCondominio"
+            android:name=".ui.Nav_drawer.selecionar_condominio.SelecionaCondominio"
             android:exported="false" />
         <activity
             android:name=".ui.perfil_user.Perfil_user"
             android:exported="false" />
         <activity
-            android:name=".Avisos.CriarAviso.Criar_avisos"
+            android:name=".ui.Avisos.CriarAviso.Criar_avisos"
             android:exported="false" />
         <activity
-            android:name=".Avisos.Quadrodeavisos.quadro_de_avisos"
+            android:name=".ui.Avisos.Quadrodeavisos.quadro_de_avisos"
             android:exported="false" />
         <activity
-            android:name=".listademembros.Lista_de_Membros"
+            android:name=".ui.lista_membros.Lista_de_Membros"
             android:exported="false" />
         <activity
-            android:name=".chat.chatcondominio.Chat_condominio"
+            android:name=".ui.chat.chatcondominio.Chat_condominio"
             android:exported="false" />
         <activity
-            android:name=".chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat"
+            android:name=".ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat"
             android:exported="false" />
         <activity
-            android:name=".chat.Escolha_Chat"
+            android:name=".ui.chat.Escolha_Chat"
             android:exported="false" />
         <activity
-            android:name=".chat.chatusuariocindico.codigochat.Chat_usuario_sindico"
+            android:name=".ui.chat.chatusuariocindico.codigochat.Chat_usuario_sindico"
             android:exported="false" />
         <activity
             android:name=".extra.Telaquaseprincipal"
             android:exported="false" />
         <activity
-            android:name=".ui.registercondominio.CadastroCondominioActivity"
+            android:name=".ui.Registro_Login.registercondominio.CadastroCondominioActivity"
             android:exported="false" />
         <activity
             android:name=".Cadastro.Codigo_Condominio"
             android:exported="false" />
         <activity
-            android:name=".ui.register.Tela_de_cadastro"
+            android:name=".ui.Registro_Login.register.Tela_de_cadastro"
             android:exported="false" />
         <activity
-            android:name=".ui.login.TelaDeLogin"
+            android:name=".ui.Registro_Login.login.TelaDeLogin"
             android:exported="false" />
         <activity
             android:name=".extra.MainActivity"

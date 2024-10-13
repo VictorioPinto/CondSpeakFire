@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:id="@+id/drawerLayout"
     tools:openDrawer="start"
-    tools:context=".Drawer_and_Bottom_Nav">
+    tools:context=".ui.Navigation.Drawer_and_Bottom_Nav">
 
     <include android:id="@+id/appBarMain"
         layout="@layout/app_bar_main"/>

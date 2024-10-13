@@ -7,12 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.condspeak.Avisos.CriarAviso.Criar_avisos
+import com.example.condspeak.ui.Navigation.Drawer_and_Bottom_Nav
+
 import com.example.condspeak.R
-import com.example.condspeak.chat.Escolha_Chat
-import com.example.condspeak.listademembros.Lista_de_Membros
-import com.example.condspeak.ui.perfil_user.Perfil_user
-import com.example.condspeak.ui.selecionar_condominio.SelecionaCondominio
+
+import com.example.condspeak.ui.Nav_drawer.selecionar_condominio.SelecionaCondominio
 
 class Telaquaseprincipal : AppCompatActivity() {
 
@@ -39,19 +38,19 @@ class Telaquaseprincipal : AppCompatActivity() {
         selecionaCondominioButton = findViewById(R.id.seleciona_condominio)
 
         criarAvisoButton.setOnClickListener {
-            startActivity(Intent(this, Criar_avisos::class.java))
+            startActivity(Intent(this, Drawer_and_Bottom_Nav::class.java))
         }
 
         escolherChatButton.setOnClickListener {
-            startActivity(Intent(this, Escolha_Chat::class.java))
+            startActivity(Intent(this, Drawer_and_Bottom_Nav::class.java))
         }
 
         listaDeMembrosButton.setOnClickListener {
-            startActivity(Intent(this, Lista_de_Membros::class.java))
+            startActivity(Intent(this, Drawer_and_Bottom_Nav::class.java))
         }
 
         atualizarPerfilButton.setOnClickListener {
-            startActivity(Intent(this, Perfil_user::class.java))
+            startActivity(Intent(this, Drawer_and_Bottom_Nav::class.java))
         }
 
         selecionaCondominioButton.setOnClickListener {

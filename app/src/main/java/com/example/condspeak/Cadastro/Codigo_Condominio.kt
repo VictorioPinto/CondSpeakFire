@@ -12,8 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.R
-import com.example.condspeak.ui.registercondominio.CadastroCondominioActivity
-import com.example.condspeak.ui.selecionar_condominio.SelecionaCondominio
+import com.example.condspeak.ui.Nav_bot.chat.Escolha_Chat
+
+import com.example.condspeak.ui.Registro_Login.registercondominio.CadastroCondominioActivity
+import com.example.condspeak.ui.Nav_drawer.selecionar_condominio.SelecionaCondominio
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FieldValue
@@ -47,7 +49,7 @@ class Codigo_Condominio : AppCompatActivity() {
         entrar = findViewById(R.id.btnentrar)
         btnteste = findViewById(R.id.button)
         btnteste.setOnClickListener {
-            val intent = Intent(this, SelecionaCondominio::class.java)
+            val intent = Intent(this, Escolha_Chat::class.java)
             startActivity(intent)
         }
 

@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.Cadastro.Codigo_Condominio
-import com.example.condspeak.ui.login.TelaDeLogin
+import com.example.condspeak.ui.Registro_Login.login.TelaDeLogin
 import com.example.condspeak.R
-import com.example.condspeak.ui.selecionar_condominio.SelecionaCondominio
+import com.example.condspeak.ui.Nav_drawer.selecionar_condominio.SelecionaCondominio
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
