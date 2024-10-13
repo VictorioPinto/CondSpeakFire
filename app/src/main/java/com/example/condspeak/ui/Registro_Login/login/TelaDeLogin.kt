@@ -9,8 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import com.example.condspeak.Cadastro.Codigo_Condominio
-import com.example.condspeak.ui.Navigation.Drawer_and_Bottom_Nav
+import com.example.condspeak.ui.Registro_Login.codigo_condominio.Codigo_Condominio
 import com.example.condspeak.R
 import com.example.condspeak.data.model.User
 import com.example.condspeak.databinding.ActivityTelaDeLoginBinding
@@ -23,7 +22,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import java.io.Console
 
 class TelaDeLogin : AppCompatActivity() {
 

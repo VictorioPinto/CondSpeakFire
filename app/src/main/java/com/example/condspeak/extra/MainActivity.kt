@@ -11,7 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.condspeak.Cadastro.Codigo_Condominio
+import com.example.condspeak.ui.Registro_Login.codigo_condominio.Codigo_Condominio
 import com.example.condspeak.ui.Registro_Login.login.TelaDeLogin
 import com.example.condspeak.R
 import com.example.condspeak.ui.Nav_drawer.selecionar_condominio.SelecionaCondominio

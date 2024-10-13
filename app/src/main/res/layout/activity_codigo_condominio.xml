@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Cadastro.Codigo_Condominio">
+    tools:context=".ui.Registro_Login.codigo_condominio.Codigo_Condominio">
 
     <ImageView
         android:id="@+id/imageView2"

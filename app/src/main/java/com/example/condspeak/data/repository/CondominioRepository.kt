@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.Source
 import kotlinx.coroutines.tasks.await
 
 
@@ -123,5 +124,51 @@ class CondominioRepository {
         }
 
         return membros
+    }
+    suspend fun getCondominio(codigo: String): Boolean {
+        val docRef = db.collection("condominios").document(codigo)
+        return try {
+            val document = docRef.get(Source.SERVER).await()
+            document != null && document.exists()
+        } catch (e: Exception) {
+            Log.w("TAG", "Error getting document", e)
+            false
+        }
+    }
+
+    suspend fun addUsuarioToCondominio(codigo: String): Boolean {
+        val usuarioId = auth.currentUser?.uid ?: return false
+        val docRef = db.collection("UserCondominio").document(codigo)
+
+        return try {
+            val document = docRef.get().await()
+            if (document != null && document.exists()) {
+                val idDosClientes = document.get("iddosclientes") as? MutableList<String> ?: mutableListOf()
+                if (!idDosClientes.contains(usuarioId)) {
+                    idDosClientes.add(usuarioId)
+                    docRef.update("iddosclientes", idDosClientes).await()
+                    true
+                } else {
+                    false // Usuário já está na lista
+                }
+            } else {
+                false // Documento não existe
+            }
+        } catch (e: Exception) {
+            Log.w("TAG", "Erro ao adicionar usuário ao documento", e)
+            false
+        }
+    }
+
+    suspend fun adicionarCodigoUsuario(codigo: String): Boolean {
+        val usuarioId = auth.currentUser!!.uid
+        val docRef = db.collection("Users").document(usuarioId)
+        return try {
+            docRef.update("codigo", FieldValue.arrayUnion(codigo)).await()
+            true
+        } catch (e: Exception) {
+            Log.w("TAG", "Erro ao adicionar itens à lista de condomínios", e)
+            false
+        }
     }
 }

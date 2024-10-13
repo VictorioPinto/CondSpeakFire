@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CondSpeak"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".ui.Registro_Login.codigo_condominio.Codigo_Condominio"
+            android:exported="false" />
         <activity
             android:name=".ui.Navigation.Drawer_and_Bottom_Nav"
             android:exported="false" />
@@ -51,9 +54,6 @@
             android:name=".ui.Registro_Login.registercondominio.CadastroCondominioActivity"
             android:exported="false" />
         <activity
-            android:name=".Cadastro.Codigo_Condominio"
-            android:exported="false" />
-        <activity
             android:name=".ui.Registro_Login.register.Tela_de_cadastro"
             android:exported="false" />
         <activity
@@ -61,7 +61,7 @@
             android:exported="false" />
         <activity
             android:name=".extra.MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
