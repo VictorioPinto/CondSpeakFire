@@ -2,18 +2,17 @@ package com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.selecionarpesso
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
 
 import com.example.condspeak.extra.ValorGlobal
 import com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlin.io.path.exists
 
 class sindico_selecao_chat : AppCompatActivity() {
     private lateinit var codigoCondominio: String
@@ -29,7 +28,7 @@ class sindico_selecao_chat : AppCompatActivity() {
         }
         recyclerView = findViewById(R.id.Recycleview)
 
-        codigoCondominio = ValorGlobal.Codigo_Condominio
+        codigoCondominio = ValorGlobal.CodigoCondominio
         buscarClientes(codigoCondominio)
     }
 
@@ -45,7 +44,7 @@ class sindico_selecao_chat : AppCompatActivity() {
                 }
             }
             .addOnFailureListener { exception ->
-
+                Log.e("sindico_selecao_chat", "Erro ao buscar dados do condominio", exception)
             }
     }
 
@@ -69,7 +68,8 @@ class sindico_selecao_chat : AppCompatActivity() {
                         atualizarRecyclerView(pessoas)
                     }
                 }
-                .addOnFailureListener { exception ->
+                .addOnFailureListener {exception ->
+                    Log.e("sindico_selecao_chat", "Erro ao buscar dados do cliente", exception)
                 }
         }
     }

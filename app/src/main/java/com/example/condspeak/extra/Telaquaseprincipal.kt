@@ -56,8 +56,5 @@ class Telaquaseprincipal : AppCompatActivity() {
         selecionaCondominioButton.setOnClickListener {
             startActivity(Intent(this, SelecionaCondominio::class.java))
         }
-
-        val CodigoCondominio = ValorGlobal.Codigo_Condominio
-        val tipoUsuario = ValorGlobal.tipoUsuario
     }
 }

@@ -1,13 +1,11 @@
-package com.example.condspeak
+package com.example.condspeak.ui.Nav_bot.Avisos
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.condspeak.R
 
 class AvisosFragment : Fragment() {
 

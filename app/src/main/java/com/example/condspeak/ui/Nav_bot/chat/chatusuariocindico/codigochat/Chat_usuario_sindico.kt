@@ -1,7 +1,6 @@
 package com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.codigochat
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
@@ -11,12 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
 import com.example.condspeak.extra.ValorGlobal
-import com.example.condspeak.ui.chat.chatcondominio.model.Mensagem
 import com.example.condspeak.viewmodel.ChatViewModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
-import java.util.Date
 
 class Chat_usuario_sindico : AppCompatActivity() {
 
@@ -43,9 +37,9 @@ class Chat_usuario_sindico : AppCompatActivity() {
         rvMensagens.adapter = adapter
         rvMensagens.layoutManager = LinearLayoutManager(this)
 
-        codigoCondominio = ValorGlobal.Codigo_Condominio
+        codigoCondominio = ValorGlobal.CodigoCondominio
         iddapessoa = intent.getStringExtra("idCliente") ?: ""
-        tipoUsuario = ValorGlobal.tipoUsuario
+        tipoUsuario = ValorGlobal.TipoUsuario
 
         btnEnviar.setOnClickListener {
             val conteudo = etMensagem.text.toString()

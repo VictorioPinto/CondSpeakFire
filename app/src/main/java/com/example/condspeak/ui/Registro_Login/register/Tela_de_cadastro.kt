@@ -11,6 +11,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.condspeak.data.model.User
 import com.example.condspeak.databinding.ActivityTelaDeCadastroBinding
+import com.example.condspeak.data.Masks.CpfMask
+import com.example.condspeak.data.Masks.TelefoneMask
 import com.example.condspeak.ui.Registro_Login.login.TelaDeLogin
 import com.example.condspeak.viewmodel.UserViewModel
 
@@ -42,6 +44,8 @@ class Tela_de_cadastro : AppCompatActivity() {
         userViewModel.saveDataStatus.observe(this) { status ->
             Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
         }
+        binding.edtCpf.addTextChangedListener(CpfMask())
+        binding.edttelefone.addTextChangedListener(TelefoneMask())
     }
 
     private fun voltar() {

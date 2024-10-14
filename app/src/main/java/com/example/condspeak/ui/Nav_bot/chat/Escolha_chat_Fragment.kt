@@ -22,8 +22,8 @@ class Escolha_chat_Fragment : Fragment() {
     lateinit var btn1: Button
     lateinit var btn2: Button
     private val db = FirebaseFirestore.getInstance()
-    private val tipoUsuario = ValorGlobal.tipoUsuario
-    private val CodigoCondominio = ValorGlobal.Codigo_Condominio
+    private val tipoUsuario = ValorGlobal.TipoUsuario
+    private val CodigoCondominio = ValorGlobal.CodigoCondominio
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

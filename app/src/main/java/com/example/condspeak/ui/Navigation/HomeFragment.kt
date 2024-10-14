@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.condspeak.AvisosFragment
+import com.example.condspeak.ui.Nav_bot.Avisos.AvisosFragment
 import com.example.condspeak.R
 import com.example.condspeak.ui.Nav_bot.chat.Escolha_chat_Fragment
 import com.example.condspeak.ui.Nav_bot.perfil_user.UserFragment

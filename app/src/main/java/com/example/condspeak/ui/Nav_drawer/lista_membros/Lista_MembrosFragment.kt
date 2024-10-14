@@ -26,7 +26,7 @@ class Lista_MembrosFragment : Fragment(R.layout.fragment_lista_membros) {
             recyclerView.adapter = adapter
         })
 
-        val codigoCondominio = ValorGlobal.Codigo_Condominio
+        val codigoCondominio = ValorGlobal.CodigoCondominio
         viewModel.carregarMembros(codigoCondominio)
     }
 }

@@ -1,7 +1,6 @@
 package com.example.condspeak.data.repository
 
 import android.util.Log
-import com.example.condspeak.data.model.Model_Membros
 import com.example.condspeak.extra.ValorGlobal
 import com.example.condspeak.ui.chat.chatcondominio.model.Mensagem
 
@@ -13,7 +12,7 @@ import java.util.Date
 
 class ChatRepository {
     private val db = FirebaseFirestore.getInstance()
-    private val codigoCondominio = ValorGlobal.Codigo_Condominio
+    private val codigoCondominio = ValorGlobal.CodigoCondominio
     private val usuarioId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
 
     suspend fun obterMensagens(): List<Mensagem> {

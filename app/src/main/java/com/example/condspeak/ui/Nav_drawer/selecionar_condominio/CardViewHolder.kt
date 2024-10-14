@@ -8,7 +8,6 @@ import com.example.condspeak.ui.Navigation.Drawer_and_Bottom_Nav
 
 import com.example.condspeak.extra.ValorGlobal
 import com.example.condspeak.databinding.CardCellBinding
-import com.example.condspeak.extra.Telaquaseprincipal
 
 class CardViewHolder(private val cardCellBinding: CardCellBinding) :
     RecyclerView.ViewHolder(cardCellBinding.root) {
@@ -18,8 +17,8 @@ class CardViewHolder(private val cardCellBinding: CardCellBinding) :
         cardCellBinding.CEP.text = condominio.tipo
         cardCellBinding.proximapagina.setOnClickListener {
             Log.d("CardViewHolder", condominio.codigo + condominio.tipo)
-            ValorGlobal.Codigo_Condominio = condominio.codigo
-            ValorGlobal.tipoUsuario = condominio.tipo.toString()
+            ValorGlobal.CodigoCondominio = condominio.codigo
+            ValorGlobal.TipoUsuario = condominio.tipo.toString()
             val intent = Intent(itemView.context, Drawer_and_Bottom_Nav::class.java)
             itemView.context.startActivity(intent)
         }
