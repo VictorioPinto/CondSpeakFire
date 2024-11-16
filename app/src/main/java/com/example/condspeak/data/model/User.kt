@@ -1,6 +1,6 @@
 package com.example.condspeak.data.model
-
 data class User(
+    val imagem: String = "",
     val nome: String = "",
     val email: String = "",
     val senha: String = "",

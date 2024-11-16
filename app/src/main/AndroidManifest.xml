@@ -23,30 +23,20 @@
         <activity
             android:name=".ui.Nav_drawer.selecionar_condominio.SelecionaCondominio"
             android:exported="false" />
+
         <activity
-            android:name=".ui.perfil_user.Perfil_user"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Avisos.CriarAviso.Criar_avisos"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Avisos.Quadrodeavisos.quadro_de_avisos"
-            android:exported="false" />
-        <activity
-            android:name=".ui.lista_membros.Lista_de_Membros"
-            android:exported="false" />
-        <activity
-            android:name=".ui.chat.chatcondominio.Chat_condominio"
+            android:name=".ui.Nav_bot.chat.chatusuariocindico.codigochat.Chat_usuario_sindico"
             android:exported="false" />
         <activity
             android:name=".ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat"
             android:exported="false" />
         <activity
-            android:name=".ui.chat.Escolha_Chat"
+            android:name=".ui.Nav_bot.Avisos.Quadrodeavisos.quadro_de_avisos"
             android:exported="false" />
         <activity
-            android:name=".ui.chat.chatusuariocindico.codigochat.Chat_usuario_sindico"
+            android:name=".ui.Nav_bot.chat.chatcondominio.Chat_condominio"
             android:exported="false" />
+
         <activity
             android:name=".extra.Telaquaseprincipal"
             android:exported="false" />

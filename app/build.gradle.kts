@@ -48,7 +48,7 @@ android {
 }
 
 dependencies {
-
+    implementation("io.coil-kt:coil:2.4.0")
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     val nav_version = "2.8.2"

@@ -53,6 +53,7 @@ class Tela_de_cadastro : AppCompatActivity() {
     }
 
     private fun Cadastrar() {
+        val imagem = "ImagemPerfil/4675159.png"
         val nome = binding.edtNome.text.toString()
         val email = binding.edtEmail.text.toString()
         val senha = binding.edtSenhacliente.text.toString()
@@ -64,11 +65,11 @@ class Tela_de_cadastro : AppCompatActivity() {
         } else {
             userViewModel.registerUser(email, senha) { success, message ->
                 if (success) {
-                    val user = User(nome, email, senha, telefone, cpf)
+                    val user = User(imagem,nome, email, senha, telefone, cpf)
                     userViewModel.saveUserData(user)
                     startActivity(Intent(this, TelaDeLogin::class.java))
                 } else {
-                    // Handle registration error (e.g., show error message)
+
                     Toast.makeText(this, "Erro ao cadastrar: $message", Toast.LENGTH_SHORT).show()
                 }
             }

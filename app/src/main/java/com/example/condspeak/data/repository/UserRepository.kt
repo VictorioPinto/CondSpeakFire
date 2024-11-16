@@ -86,6 +86,17 @@ class UserRepository {
             false
         }
     }
+    suspend fun updateUserData(user: User): Boolean = withContext(Dispatchers.IO) {
+        try {
+            val userId = auth.currentUser?.uid ?: return@withContext false
+            val docRef = firestore.collection("Users").document(userId)
+            docRef.set(user).await()
+            true
+        } catch (e: Exception) {
+            // Lidar com a exceção (ex: log, mostrar mensagem de erro)
+            false
+        }
+    }
 
     suspend fun getUserData(userId: String): User? = withContext(Dispatchers.IO) {
         try {

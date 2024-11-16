@@ -27,6 +27,7 @@ class UserViewModel : ViewModel() {
         userRepository.deleteUser(userId)
 
     }
+
     fun saveUserData(user: User) {
         userRepository.saveUserData(user) { success, message ->
             if (success) {
@@ -61,6 +62,12 @@ class UserViewModel : ViewModel() {
         viewModelScope.launch {
             val success = userRepository.signInWithGoogle(account)
             onComplete(success)
+        }
+    }
+    fun updateUserData(user: User, onComplete: (Boolean, String?) -> Unit) {
+        viewModelScope.launch {
+            val success = userRepository.updateUserData(user)
+            onComplete(success, null)
         }
     }
 

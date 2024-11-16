@@ -1,17 +1,22 @@
 package com.example.condspeak.ui.Nav_bot.perfil_user
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.condspeak.R
+import com.example.condspeak.R.id.btnEditarPerfil
 import com.example.condspeak.data.model.User
+import com.example.condspeak.ui.Nav_bot.perfil_user.updateperfil.UpdateFragment
+import com.example.condspeak.ui.Nav_drawer.reclamacao.Reclamacao_Fragment
 import com.example.condspeak.ui.Registro_Login.login.TelaDeLogin
 import com.example.condspeak.viewmodel.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +30,7 @@ class UserFragment : Fragment() {
     private lateinit var cpf: TextView
     private lateinit var telefone: TextView
     private lateinit var btndeletar: Button
+    private lateinit var btneditar: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +43,7 @@ class UserFragment : Fragment() {
     }
 
     private fun initViews(view: View) {
+        btneditar = view.findViewById(btnEditarPerfil)
         btndeletar = view.findViewById(R.id.btnDeletarUser)
         nome = view.findViewById(R.id.txtNomePerfil)
         email = view.findViewById(R.id.txtEmailPerfil)
@@ -54,8 +61,17 @@ class UserFragment : Fragment() {
                 deletaConta(usuarioId)
             }
         }
+        btneditar.setOnClickListener {
+            replaceFragment(UpdateFragment())
+            requireActivity().title = "Reclamacao"
+        }
     }
-
+    private fun replaceFragment(fragment: Fragment) {
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.navFragment, fragment)
+            .commit()
+    }
     private fun userget(userId: String) {
         userViewModel.getUserData(userId) { user: User? ->
             nome.text = user?.nome

@@ -6,7 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.perfil_user.UserFragment">
-
+    <ImageView
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:src="@drawable/edit_box_line"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:id="@+id/btnEditarPerfil"
+        />
     <TextView
         android:id="@+id/txtTituloPerfil"
         android:layout_width="wrap_content"

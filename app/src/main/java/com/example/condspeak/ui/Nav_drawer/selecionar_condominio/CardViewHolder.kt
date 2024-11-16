@@ -18,7 +18,7 @@ class CardViewHolder(private val cardCellBinding: CardCellBinding) :
         cardCellBinding.proximapagina.setOnClickListener {
             Log.d("CardViewHolder", condominio.codigo + condominio.tipo)
             ValorGlobal.CodigoCondominio = condominio.codigo
-            ValorGlobal.TipoUsuario = condominio.tipo.toString()
+            ValorGlobal.TipoUsuario = condominio.tipo
             val intent = Intent(itemView.context, Drawer_and_Bottom_Nav::class.java)
             itemView.context.startActivity(intent)
         }
