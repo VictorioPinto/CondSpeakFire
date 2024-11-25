@@ -19,7 +19,7 @@ class CadastroCondominioActivity : AppCompatActivity(), CadastroView {
     private lateinit var CEP: EditText
     private lateinit var CNPJ: EditText
     private lateinit var numero: EditText
-    private lateinit var Cadastrar: Button
+    private lateinit var Cadastrar: EditText
     private lateinit var nome: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {

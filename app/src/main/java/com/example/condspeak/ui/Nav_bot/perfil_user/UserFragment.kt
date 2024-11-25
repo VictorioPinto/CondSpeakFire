@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -29,7 +30,7 @@ class UserFragment : Fragment() {
     private lateinit var email: TextView
     private lateinit var cpf: TextView
     private lateinit var telefone: TextView
-    private lateinit var btndeletar: Button
+    private lateinit var btndeletar: EditText
     private lateinit var btneditar: ImageView
 
     override fun onCreateView(

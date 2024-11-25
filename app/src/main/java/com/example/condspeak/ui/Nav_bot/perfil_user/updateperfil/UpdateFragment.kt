@@ -35,7 +35,7 @@ class UpdateFragment : Fragment() {
     private lateinit var email: EditText
     private lateinit var cpf: EditText
     private lateinit var telefone: EditText
-    private lateinit var btnsalvar: Button
+    private lateinit var btnsalvar: EditText
     private lateinit var user: User
 
 
@@ -83,7 +83,6 @@ class UpdateFragment : Fragment() {
                             replaceFragment(UserFragment())
                             requireActivity().title = "Reclamacao"
                         } else {
-                            // Lidar com erro (ex: mostrar mensagem de erro)
                         }
                     }
                 }

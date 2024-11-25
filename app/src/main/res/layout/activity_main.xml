@@ -5,27 +5,29 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
+    android:background="@color/cinza"
+    android:backgroundTint="@color/cinza"
     tools:context=".tela_de_quando_entra">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-
+        android:layout_width="285dp"
+        android:layout_height="241dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+
+
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo_com_nome" />
 
     <TextView
         android:id="@+id/Carregando"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Carregando..."
-        android:textColor="#000000"
+        android:textColor="@color/branco"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

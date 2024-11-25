@@ -48,16 +48,7 @@ class TelaDeLogin : AppCompatActivity() {
         binding.txtCriaConta2.setOnClickListener { chamaTelaCadastro() }
         binding.btnLogar.setOnClickListener { fazLoginComEmailESenha() }
         binding.txtSenha.setOnClickListener { esqueceuSenha() }
-        binding.btnGoogle.setOnClickListener { loginGoogle() }
-    }
 
-    private fun configuraGoogleSignIn() {
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-
-        googleSignClient = GoogleSignIn.getClient(this, gso)
     }
 
     private fun fazLoginComEmailESenha() {

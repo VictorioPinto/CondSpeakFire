@@ -13,7 +13,6 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-
     <!-- Strings para activity_main_drawer.xml -->
     <string name="menu_home">Início</string>
     <string name="menu_gallery">Galeria</string>
@@ -24,4 +23,5 @@
     <string name="perfil">Perfil</string>
     <string name="open_drawer">Open Drawer</string>
     <string name="Close_drawer">Close Drawer\n</string>
+    <string name="entrar_no_condominio">Entrar no condominio</string>
 </resources>

@@ -20,9 +20,9 @@ class Codigo_Condominio : AppCompatActivity() {
     private val viewModel = CodigoCondominioViewModel(repository) // Instanciando o ViewModel diretamente
 
     private lateinit var code: EditText
-    private lateinit var entrar: Button
+    private lateinit var entrar: EditText
     private lateinit var cadastrarnocondominio: TextView
-    private lateinit var btnteste: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class Codigo_Condominio : AppCompatActivity() {
         cadastrarnocondominio = findViewById(R.id.txtCadCond)
         code = findViewById(R.id.edtCode)
         entrar = findViewById(R.id.btnentrar)
-        btnteste = findViewById(R.id.button)
+
 
         cadastrarnocondominio.setOnClickListener {
             teladecadastrocondominio()

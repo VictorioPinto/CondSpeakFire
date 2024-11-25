@@ -35,12 +35,12 @@ class Tela_de_cadastro : AppCompatActivity() {
         binding.txtVoltarConta.setOnClickListener { voltar() }
         binding.btnCadastrar.setOnClickListener { Cadastrar() }
 
-        // Observando o status de cadastro
+
         userViewModel.registrationStatus.observe(this) { status ->
             Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
         }
 
-        // Observando o status de salvar dados
+
         userViewModel.saveDataStatus.observe(this) { status ->
             Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
         }

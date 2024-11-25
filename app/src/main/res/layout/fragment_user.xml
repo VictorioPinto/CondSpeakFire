@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cinza"
     tools:context=".ui.perfil_user.UserFragment">
+
     <ImageView
         android:layout_width="50px"
         android:layout_height="50px"
@@ -20,6 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Perfil Usuario"
+        android:textSize="20dp"
+        android:textColor="@color/azulrt"
         app:layout_constraintBottom_toTopOf="@+id/txtNomePerfil"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -29,7 +33,10 @@
         android:id="@+id/txtNomePerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/text_border"
+        android:padding="15dp"
         android:text="Nome"
+        android:textColor="@color/branco"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTituloPerfil"
@@ -39,7 +46,10 @@
         android:id="@+id/txtEmailPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/text_border"
+        android:padding="15dp"
         android:text="Email"
+        android:textColor="@color/branco"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNomePerfil"
@@ -49,7 +59,10 @@
         android:id="@+id/txtCpfPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/text_border"
+        android:padding="15dp"
         android:text="CPF"
+        android:textColor="@color/branco"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmailPerfil"
@@ -59,19 +72,26 @@
         android:id="@+id/txtTelefonePerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/text_border"
+        android:padding="15dp"
         android:text="Telefone"
+        android:textColor="@color/branco"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCpfPerfil"
         app:layout_constraintBottom_toTopOf="@+id/btnDeletarUser" />
 
-    <Button
+    <EditText
         android:id="@+id/btnDeletarUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Deletar Conta"
+        android:background="@drawable/button_border"
+        android:padding="15dp"
+        android:text="Atualizar Conta"
+        android:textColor="@color/branco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefonePerfil" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefonePerfil"
+        app:rippleColor="#000000" />
 </androidx.constraintlayout.widget.ConstraintLayout>

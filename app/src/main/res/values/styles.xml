@@ -15,8 +15,6 @@
         <item name="android:layout_marginRight">40dp</item>
     </style>
 
-    <style name="botao">
-        <item name="android:background">@drawable/button</item>
-    </style>
+
 
 </resources>

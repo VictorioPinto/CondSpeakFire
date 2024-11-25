@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cinza"
     tools:context=".ui.Nav_bot.perfil_user.updateperfil.UpdateFragment">
 
         <TextView
@@ -11,11 +12,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Perfil Usuario"
+            android:textColor="@color/azulrt"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/edtNomePerfil"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/edtNomePerfil"/>
 
         <EditText
             android:id="@+id/edtNomePerfil"
@@ -25,6 +27,9 @@
             android:layout_height="58dp"
             android:layout_marginVertical="10dp"
             android:text="Nome"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textColorHint="#000000"
             app:layout_constraintBottom_toTopOf="@+id/edtEmailPerfil"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -37,6 +42,9 @@
             android:layout_height="58dp"
             android:layout_marginVertical="10dp"
             android:text="Email"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textColorHint="#000000"
             app:layout_constraintBottom_toTopOf="@+id/edtCpfPerfil"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -49,6 +57,9 @@
             android:layout_height="58dp"
             android:layout_marginVertical="10dp"
             android:text="CPF"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textColorHint="#000000"
             app:layout_constraintBottom_toTopOf="@+id/edtTelefonePerfil"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -62,20 +73,27 @@
             android:layout_height="58dp"
             android:layout_marginVertical="10dp"
             android:text="Telefone"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textColorHint="#000000"
             app:layout_constraintBottom_toTopOf="@+id/btnSaveUser"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtCpfPerfil" />
 
-        <Button
+        <EditText
             android:id="@+id/btnSaveUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_border"
+            android:padding="15dp"
             android:text="Atualizar Conta"
+            android:textColor="@color/branco"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtTelefonePerfil" />
+            app:layout_constraintTop_toBottomOf="@+id/edtTelefonePerfil"
+            app:rippleColor="#000000" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
