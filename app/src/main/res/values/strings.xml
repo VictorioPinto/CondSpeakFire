@@ -24,4 +24,5 @@
     <string name="open_drawer">Open Drawer</string>
     <string name="Close_drawer">Close Drawer\n</string>
     <string name="entrar_no_condominio">Entrar no condominio</string>
+    <string name="marcar_aviso">Agendar aviso</string>
 </resources>

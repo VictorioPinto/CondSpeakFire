@@ -29,16 +29,16 @@ class Escolha_chat_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Infla o layout para este fragment
+
         val view = inflater.inflate(R.layout.fragment_escolha_chat, container, false)
 
-        // Encontre as views no layout
+
         btn1 = view.findViewById(R.id.button2)
         btn2 = view.findViewById(R.id.button3)
 
         Log.d("Escolha_Chat", "Código do condomínio: $CodigoCondominio $tipoUsuario")
 
-        // Ajuste do botão com base no tipo de usuário
+
         if (tipoUsuario == "dono") {
             btn1.text = "Chat privado com os moradores"
             btn1.setOnClickListener {

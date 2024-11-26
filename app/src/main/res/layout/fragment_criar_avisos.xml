@@ -5,10 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Nav_bot.Avisos.CriarAviso.criar_avisos">
+    android:background="@color/cinza"
+    tools:context=".ui.Nav_bot.Avisos.CriarAviso.Criar_avisos">
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/swt"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" "
@@ -17,6 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
+        android:textColor="@color/branco"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,61 +34,84 @@
         android:id="@+id/seleciona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:background="@color/branco"
         android:ems="10"
         android:text="Name"
         app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
-    </Spinner>
+        app:layout_constraintBottom_toTopOf="@+id/imagemseila"
+        />
 
     <ImageView
-        android:id="@+id/imagem"
+        android:id="@+id/imagemseila"
         android:layout_width="wrap_content"
         android:layout_height="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/seleciona"
-        app:srcCompat="@drawable/engenheiro" />
+        app:srcCompat="@drawable/engenheiro"
+        app:layout_constraintBottom_toTopOf="@+id/dateinicio"/>
     <TextView
         android:id="@+id/dateinicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/branco"
         android:text="data de inicio"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/imagem"
+        app:layout_constraintTop_toBottomOf="@id/imagemseila"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText2"
+        />
     <EditText
         android:id="@+id/editTextText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="date"
-        android:text="20/21/2005"
+        android:text=""
         app:layout_constraintTop_toBottomOf="@id/dateinicio"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/datefim"/>
     <TextView
         android:id="@+id/datefim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/branco"
         android:text="data de fim"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/editTextText2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText3"/>
     <EditText
         android:id="@+id/editTextText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="date"
-        android:text="22/22/22"
+        android:text=""
         app:layout_constraintTop_toBottomOf="@id/datefim"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCriar"/>
+    <EditText
+        android:id="@+id/btnCriar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:background="@drawable/button_border"
+        android:padding="15dp"
+        android:text="@string/marcar_aviso"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:rippleColor="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
