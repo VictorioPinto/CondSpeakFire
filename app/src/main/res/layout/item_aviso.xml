@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tituloAvisoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Título do Aviso"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/mensagemAvisoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mensagem do Aviso"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dataAvisoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data do Aviso"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tipoAvisoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Título do Aviso"
+            android:textColor="@color/branco"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imagemAvisoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_com_nome" />
+
+        <TextView
+            android:id="@+id/dateInicioTextView"
+            android:layout_width="wrap_content"
+            android:textColor="@color/branco"
+            android:layout_height="wrap_content"
+            android:text="Mensagem do Aviso"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dateFimTextView"
+            android:layout_width="wrap_content"
+            android:textColor="@color/branco"
+            android:layout_height="wrap_content"
+            android:text="Data do Aviso"
+            android:textSize="14sp" />
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

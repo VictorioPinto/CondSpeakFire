@@ -1,4 +1,4 @@
-package com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa
+package com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.selecionarpessoa
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
 
 import com.example.condspeak.extra.ValorGlobal
-import com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
+import com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
 import com.google.firebase.firestore.FirebaseFirestore
 
 class sindico_selecao_chat : AppCompatActivity() {
@@ -50,7 +50,7 @@ class sindico_selecao_chat : AppCompatActivity() {
 
     private fun buscarDadosClientes(idsClientes: List<String>) {
         val db = FirebaseFirestore.getInstance()
-        val pessoas = mutableListOf<com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa.pessoa>()
+        val pessoas = mutableListOf<com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.selecionarpessoa.pessoa>()
         for (id in idsClientes) {
             db.collection("clientes")
                 .document(id)
@@ -60,7 +60,7 @@ class sindico_selecao_chat : AppCompatActivity() {
                         val nome = document.getString("nome") ?: ""
                         val codigo = document.id
                         pessoas.add(
-                            com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa.pessoa(
+                            com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.selecionarpessoa.pessoa(
                                 nome,
                                 codigo
                             )
@@ -74,9 +74,9 @@ class sindico_selecao_chat : AppCompatActivity() {
         }
     }
 
-    private fun atualizarRecyclerView(pessoas: List<com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa.pessoa>) {
+    private fun atualizarRecyclerView(pessoas: List<com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.selecionarpessoa.pessoa>) {
         val adapter =
-            com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa.PessoaAdapter(
+            com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.selecionarpessoa.PessoaAdapter(
                 pessoas
             ) { pessoa ->
                 val intent = Intent(this, Chat_usuario_sindico::class.java)

@@ -1,12 +1,10 @@
-package com.example.condspeak.ui.Nav_bot.perfil_user
+package com.example.condspeak.ui.nav_bot.perfil_user
 
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,8 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.condspeak.R
 import com.example.condspeak.R.id.btnEditarPerfil
 import com.example.condspeak.data.model.User
-import com.example.condspeak.ui.Nav_bot.perfil_user.updateperfil.UpdateFragment
-import com.example.condspeak.ui.Nav_drawer.reclamacao.Reclamacao_Fragment
+import com.example.condspeak.ui.nav_bot.perfil_user.updateperfil.UpdateFragment
 import com.example.condspeak.ui.Registro_Login.login.TelaDeLogin
 import com.example.condspeak.viewmodel.UserViewModel
 import com.google.firebase.auth.FirebaseAuth

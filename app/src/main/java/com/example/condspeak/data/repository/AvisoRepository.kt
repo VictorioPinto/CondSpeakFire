@@ -16,13 +16,25 @@ class AvisoRepository {
     private val codigoCondominio = ValorGlobal.CodigoCondominio
     private val usuarioId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
     fun saveAviso(aviso: Aviso, onComplete: (Boolean, String?) -> Unit) {
-        val docRef = firestore.collection("Avisos").document(codigoCondominio)
-        docRef.set(aviso)
+        val avisosCollection = firestore.collection("Avisos").document(codigoCondominio).collection("avisos") // Subcoleção para avisos
+        avisosCollection.add(aviso) // Usa add() para criar um novo documento
             .addOnSuccessListener {
                 onComplete(true, null)
             }
             .addOnFailureListener { e ->
                 onComplete(false, e.message)
+            }
+    }
+
+    fun getAvisos(onComplete: (List<Aviso>?, Exception?) -> Unit) {
+        val avisosCollection = firestore.collection("Avisos").document(codigoCondominio).collection("avisos") // Subcoleção para avisos
+        avisosCollection.get() // Usa get() para obter todos os documentos da subcoleção
+            .addOnSuccessListener { querySnapshot ->
+                val avisos = querySnapshot.documents.mapNotNull { it.toObject(Aviso::class.java) } // Converte os documentos em objetos Aviso
+                onComplete(avisos, null)
+            }
+            .addOnFailureListener { exception ->
+                onComplete(null, exception)
             }
     }
 }

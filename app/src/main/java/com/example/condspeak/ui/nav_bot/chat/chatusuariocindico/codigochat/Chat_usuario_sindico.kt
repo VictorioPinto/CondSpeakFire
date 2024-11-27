@@ -1,4 +1,4 @@
-package com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.codigochat
+package com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.codigochat
 
 import android.os.Bundle
 import android.widget.Button

@@ -1,5 +1,5 @@
 
-package com.example.condspeak.ui.Nav_bot.chat
+package com.example.condspeak.ui.nav_bot.chat
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,8 +14,8 @@ import com.example.condspeak.R
 
 
 import com.example.condspeak.extra.ValorGlobal
-import com.example.condspeak.ui.Nav_bot.chat.chatcondominio.Chat_condominio
-import com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
+import com.example.condspeak.ui.nav_bot.chat.chatcondominio.Chat_condominio
+import com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.codigochat.Chat_usuario_sindico
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Escolha_chat_Fragment : Fragment() {
@@ -42,7 +42,7 @@ class Escolha_chat_Fragment : Fragment() {
         if (tipoUsuario == "dono") {
             btn1.text = "Chat privado com os moradores"
             btn1.setOnClickListener {
-                val intent = Intent(context, com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat::class.java)
+                val intent = Intent(context, com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat::class.java)
                 startActivity(intent)
             }
         } else if (tipoUsuario == "cliente") {

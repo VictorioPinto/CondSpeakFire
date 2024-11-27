@@ -1,4 +1,4 @@
-package com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.codigochat
+package com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.codigochat
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -8,15 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.compose.ui.semantics.text
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condspeak.R
 import com.example.condspeak.ui.chat.chatcondominio.model.Mensagem
 import com.google.firebase.auth.FirebaseAuth
 import java.text.SimpleDateFormat
 import java.util.Locale
-import kotlin.collections.addAll
-import kotlin.text.clear
 
 class MensagemAdapter(private val mensagens: MutableList<Mensagem>) :
     RecyclerView.Adapter<MensagemAdapter.MensagemViewHolder>() {

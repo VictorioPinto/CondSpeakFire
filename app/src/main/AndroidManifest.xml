@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -25,16 +27,13 @@
             android:exported="false" />
 
         <activity
-            android:name=".ui.Nav_bot.chat.chatusuariocindico.codigochat.Chat_usuario_sindico"
+            android:name=".ui.nav_bot.chat.chatusuariocindico.codigochat.Chat_usuario_sindico"
             android:exported="false" />
         <activity
-            android:name=".ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat"
+            android:name=".ui.nav_bot.chat.chatusuariocindico.selecionarpessoa.sindico_selecao_chat"
             android:exported="false" />
         <activity
-            android:name=".ui.Nav_bot.Avisos.Quadrodeavisos.quadro_de_avisos"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Nav_bot.chat.chatcondominio.Chat_condominio"
+            android:name=".ui.nav_bot.chat.chatcondominio.Chat_condominio"
             android:exported="false" />
 
         <activity

@@ -48,6 +48,7 @@ android {
 }
 
 dependencies {
+    implementation("com.squareup.picasso:picasso:2.8")
     implementation("io.coil-kt:coil:2.4.0")
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

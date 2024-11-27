@@ -1,4 +1,4 @@
-package com.example.condspeak.ui.Nav_bot.chat.chatusuariocindico.selecionarpessoa
+package com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.selecionarpessoa
 
 import android.view.LayoutInflater
 import android.view.View

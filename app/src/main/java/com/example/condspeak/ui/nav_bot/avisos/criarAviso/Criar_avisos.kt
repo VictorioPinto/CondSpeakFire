@@ -1,4 +1,4 @@
-package com.example.condspeak.ui.Nav_bot.Avisos.CriarAviso
+package com.example.condspeak.ui.nav_bot.avisos.criarAviso
 
 import android.os.Bundle
 import android.text.Editable
@@ -11,9 +11,8 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Spinner
-import android.widget.Switch
+import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
-import androidx.compose.ui.semantics.text
 import androidx.lifecycle.ViewModelProvider
 
 
@@ -22,12 +21,11 @@ import com.example.condspeak.data.model.Aviso
 import com.example.condspeak.viewmodel.AvisoViewModel
 
 
-import com.example.condspeak.viewmodel.UserViewModel
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Date
 import java.util.Locale
 
 
@@ -58,7 +56,7 @@ class Criar_avisos : Fragment() {
         spinner.adapter = adapter
         val inicio = view.findViewById<EditText>(R.id.edtdateinicio)
         val fim = view.findViewById<EditText>(R.id.edtdatefim)
-        val btnCriar = view.findViewById<EditText>(R.id.btnCriar)
+        val btnCriar = view.findViewById<TextView>(R.id.btnCriar)
         val novoTexto = inicio.text.toString()
 
         tempofinal(spinner, novoTexto, fim)
@@ -100,6 +98,7 @@ class Criar_avisos : Fragment() {
                 }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val dia = inicio.text.toString()
+                novaimagem(spinner, image)
                 tempofinal(spinner, dia, fim)
             }
 
@@ -111,14 +110,25 @@ class Criar_avisos : Fragment() {
 
         return view
     }
+
+    private fun novaimagem(spinner: Spinner, image: ImageView) {
+        if (spinner.selectedItem.toString() == "Opção 1") {
+            image.setImageResource(R.drawable.engenheiro)
+        }else if(spinner.selectedItem.toString() == "Opção 2"){
+            image.setImageResource(R.drawable.eletricista)
+        }else if(spinner.selectedItem.toString() == "Opção 3"){
+            image.setImageResource(R.drawable.pintpr)
+        }
+    }
+
     private fun salvar(titulo: String, mensagem: String) {
         if (titulo.isEmpty() || mensagem.isEmpty()) {
             // Exibir mensagem de erro ou realizar alguma ação
         } else {
             val usuarioId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
             val timestamp = System.currentTimeMillis()
-            val data = Date(timestamp)
-            val aviso = Aviso("aviso", titulo, mensagem, data, "", usuarioId, "", "")
+
+            val aviso = Aviso("aviso", titulo, mensagem, Timestamp.now(), "", "", "", "", usuarioId)
             avisoViewModel.saveAvisoData(aviso) // Usa a instância do ViewModel
         }
     }
@@ -128,11 +138,13 @@ class Criar_avisos : Fragment() {
         } else {
             val usuarioId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
             val timestamp = System.currentTimeMillis()
-            val data = Date(timestamp)
+
             if (spinnerValue == "Opção 1") {
-                val image =
+                val image = "@drawable/engenheiro"
+                val aviso = Aviso("aviso2", "", "", Timestamp.now(), image, spinnerValue, dateinicio, datefim,usuarioId)
+                avisoViewModel.saveAvisoData(aviso)
             }
-            val aviso = Aviso("aviso", "", "", data, spinnerValue, usuarioId, dateinicio, datefim)
+
         }
     }
 }

@@ -5,11 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.condspeak.ui.Nav_bot.Avisos.AvisosFragment
+import com.example.condspeak.ui.nav_bot.avisos.quadrodeavisos.AvisosFragment
 import com.example.condspeak.R
-import com.example.condspeak.ui.Nav_bot.Avisos.CriarAviso.Criar_avisos
-import com.example.condspeak.ui.Nav_bot.chat.Escolha_chat_Fragment
-import com.example.condspeak.ui.Nav_bot.perfil_user.UserFragment
+import com.example.condspeak.ui.nav_bot.avisos.criarAviso.Criar_avisos
+import com.example.condspeak.ui.nav_bot.perfil_user.UserFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -26,13 +25,13 @@ class HomeFragment : Fragment() {
             when (it.itemId) {
                 R.id.bottom_avisos -> {
 
-                    replaceFragment(Criar_avisos())
+                    replaceFragment(AvisosFragment())
 
                     activity?.title = "Avisos"
                 }
                 R.id.bottom_chat -> {
 
-                    replaceFragment(Escolha_chat_Fragment())
+                    replaceFragment(Criar_avisos())
                     activity?.title = "Chat"
                 }
                 R.id.bottom_user -> {
