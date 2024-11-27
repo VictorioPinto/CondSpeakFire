@@ -156,7 +156,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/edtmessage_aviso"/>
     <EditText
-
         android:id="@+id/edtmessage_aviso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -178,9 +177,10 @@
         android:padding="15dp"
         android:text="@string/marcar_aviso"
         android:textColor="@color/branco"
-        app:layout_constraintTop_toBottomOf="@+id/edtdatefim"
-        android:layout_marginTop="50dp"
 
+        android:layout_marginTop="50dp"
+app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
 

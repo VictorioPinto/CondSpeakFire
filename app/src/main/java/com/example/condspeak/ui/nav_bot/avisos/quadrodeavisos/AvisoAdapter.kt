@@ -17,6 +17,7 @@ class AvisoAdapter : RecyclerView.Adapter<AvisoAdapter.AvisoViewHolder>() {
     private var avisos: List<Aviso> = emptyList()
 
     class AvisoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         val tituloTextView: TextView = itemView.findViewById(R.id.tituloAvisoTextView)
         val mensagemTextView: TextView = itemView.findViewById(R.id.mensagemAvisoTextView)
         val dataTextView: TextView = itemView.findViewById(R.id.dataAvisoTextView)
@@ -40,7 +41,9 @@ class AvisoAdapter : RecyclerView.Adapter<AvisoAdapter.AvisoViewHolder>() {
         holder.tipoAvisoTextView.text = aviso.valueSpinner
         holder.dateInicioTextView.text = aviso.datainicio
         holder.dateFimTextView.text = aviso.datafim
-        holder.imagemAvisoImageView.setImageResource(R.drawable.logo_com_nome)
+        if (aviso.tipo == "reforma") {
+            holder.imagemAvisoImageView.setImageResource(R.drawable.logo_com_nome)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -48,6 +48,8 @@ class Criar_avisos : Fragment() {
         val opcoes = arrayOf("Opção 1", "Opção 2", "Opção 3")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcoes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val tituloTextView = view.findViewById<TextView>(R.id.titulo_aviso)
+        val mensagemTextView = view.findViewById<TextView>(R.id.messagem_aviso)
         val titulo = view.findViewById<EditText>(R.id.edttitulo_aviso)
         val mensagem = view.findViewById<EditText>(R.id.edtmessage_aviso)
         avisoViewModel = ViewModelProvider(requireActivity()).get(AvisoViewModel::class.java)
@@ -75,13 +77,24 @@ class Criar_avisos : Fragment() {
 
         switch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
+                mensagemTextView.visibility = View.GONE
+                tituloTextView.visibility = View.GONE
+                titulo.visibility = View.GONE
+                mensagem.visibility = View.GONE
+                //divisa
                 spinner.visibility = View.VISIBLE
                 image.visibility = View.VISIBLE
                 inicio.visibility = View.VISIBLE
                 fim.visibility = View.VISIBLE
                 val dia = inicio.text.toString()
                 tempofinal(spinner, dia, fim) // Chama a função depois de definir a visibilidade
+
             } else {
+                mensagemTextView.visibility = View.VISIBLE
+                tituloTextView.visibility = View.VISIBLE
+                titulo.visibility = View.VISIBLE
+                mensagem.visibility = View.VISIBLE
+                //divisa
                 spinner.visibility = View.GONE
                 image.visibility = View.GONE
                 inicio.visibility = View.GONE
