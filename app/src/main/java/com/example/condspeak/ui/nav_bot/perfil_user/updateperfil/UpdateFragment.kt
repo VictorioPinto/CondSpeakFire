@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.condspeak.R
@@ -28,7 +29,7 @@ class UpdateFragment : Fragment() {
     private lateinit var email: EditText
     private lateinit var cpf: EditText
     private lateinit var telefone: EditText
-    private lateinit var btnsalvar: EditText
+    private lateinit var btnsalvar: TextView
     private lateinit var user: User
 
 

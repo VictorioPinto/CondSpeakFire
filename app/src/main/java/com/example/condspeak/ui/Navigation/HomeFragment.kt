@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.condspeak.ui.nav_bot.avisos.quadrodeavisos.AvisosFragment
 import com.example.condspeak.R
 import com.example.condspeak.ui.nav_bot.avisos.criarAviso.Criar_avisos
+import com.example.condspeak.ui.nav_bot.chat.Escolha_chat_Fragment
 import com.example.condspeak.ui.nav_bot.perfil_user.UserFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -31,7 +32,7 @@ class HomeFragment : Fragment() {
                 }
                 R.id.bottom_chat -> {
 
-                    replaceFragment(Criar_avisos())
+                    replaceFragment(Escolha_chat_Fragment())
                     activity?.title = "Chat"
                 }
                 R.id.bottom_user -> {

@@ -1,5 +1,6 @@
 package com.example.condspeak.ui.Navigation
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +22,9 @@ import com.example.condspeak.auth.FirebaseAuthService
 import com.example.condspeak.data.model.User
 import com.example.condspeak.ui.Nav_drawer.lista_membros.Lista_MembrosFragment
 import com.example.condspeak.ui.Nav_drawer.reclamacao.Reclamacao_Fragment
+import com.example.condspeak.ui.Nav_drawer.selecionar_condominio.SelecionaCondominio
+import com.example.condspeak.ui.Registro_Login.codigo_condominio.Codigo_Condominio
+import com.example.condspeak.ui.Registro_Login.login.TelaDeLogin
 import com.example.condspeak.viewmodel.UserViewModel
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.Firebase
@@ -129,11 +133,12 @@ class Drawer_and_Bottom_Nav : AppCompatActivity(), NavigationView.OnNavigationIt
             }
 
             R.id.nav_share -> {
-                Toast.makeText(this, "Share Clicked", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, SelecionaCondominio::class.java))
             }
 
             R.id.nav_logout -> {
-                Toast.makeText(this, "Logout Clicked", Toast.LENGTH_LONG).show()
+                FirebaseAuthService.auth.signOut()
+                startActivity(Intent(this, TelaDeLogin::class.java))
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START)

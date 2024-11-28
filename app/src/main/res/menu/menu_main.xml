@@ -3,12 +3,12 @@
 
     <item android:id="@+id/bottom_avisos"
         android:title="@string/menu_bottom_bar_avisos"
-        android:icon="@drawable/ic_menu_home"/>
+        android:icon="@drawable/ic_menu_avisos"/>
     <item android:id="@+id/bottom_chat"
         android:title="@string/menu_bottom_bar_escolha_chat"
-        android:icon="@drawable/ic_menu_home"/>
+        android:icon="@drawable/ic_menu_chat"/>
     <item android:id="@+id/bottom_user"
         android:title="@string/perfil"
-        android:icon="@drawable/ic_menu_home"/>
+        android:icon="@drawable/ic_menu_user"/>
 
 </menu>

@@ -11,16 +11,16 @@
             android:icon="@drawable/ic_menu_home"/>
         <item android:id="@+id/nav_lista_membros"
             android:title="Lista de Membros"
-            android:icon="@drawable/ic_menu_home"/>
+            android:icon="@drawable/ic_menu_lista"/>
         <item android:id="@+id/nav_share"
-            android:title="Usuario"
-            android:icon="@drawable/ic_menu_home"/>
+            android:title="Trocar condominio"
+            android:icon="@drawable/home_gear_line"/>
     </group>
 
 
     <item android:id="@+id/nav_reclamacoes"
         android:title="Reclamacao"
-        android:icon="@drawable/ic_menu_home"/>
+        android:icon="@drawable/error_warning_line"/>
 
     <item android:id="@+id/nav_logout"
         android:title="Logout"

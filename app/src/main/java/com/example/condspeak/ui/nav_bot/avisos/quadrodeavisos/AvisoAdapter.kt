@@ -41,8 +41,12 @@ class AvisoAdapter : RecyclerView.Adapter<AvisoAdapter.AvisoViewHolder>() {
         holder.tipoAvisoTextView.text = aviso.valueSpinner
         holder.dateInicioTextView.text = aviso.datainicio
         holder.dateFimTextView.text = aviso.datafim
-        if (aviso.tipo == "reforma") {
-            holder.imagemAvisoImageView.setImageResource(R.drawable.logo_com_nome)
+        if (aviso.valueSpinner == "Reforma") {
+            holder.imagemAvisoImageView.setImageResource(R.drawable.engenheiro)
+        }else if(aviso.valueSpinner == "Eletricidade"){
+            holder.imagemAvisoImageView.setImageResource(R.drawable.eletricista)
+        }else if(aviso.valueSpinner == "Pintor"){
+            holder.imagemAvisoImageView.setImageResource(R.drawable.pintpr)
         }
     }
 

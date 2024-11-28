@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 
 import androidx.fragment.app.Fragment
 import com.example.condspeak.R
@@ -19,8 +20,8 @@ import com.example.condspeak.ui.nav_bot.chat.chatusuariocindico.codigochat.Chat_
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Escolha_chat_Fragment : Fragment() {
-    lateinit var btn1: Button
-    lateinit var btn2: Button
+    lateinit var btn1: TextView
+    lateinit var btn2: TextView
     private val db = FirebaseFirestore.getInstance()
     private val tipoUsuario = ValorGlobal.TipoUsuario
     private val CodigoCondominio = ValorGlobal.CodigoCondominio

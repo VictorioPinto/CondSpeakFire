@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".cadastrodocondominio">
+    android:background="@color/cinza"
+    tools:context=".ui.Registro_Login.registercondominio.CadastroCondominioActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -17,11 +17,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo_com_nome" />
 
     <View
         android:id="@+id/idConponents"
         style="@style/ContainerComponents"
+        android:background="@color/cinza"
         android:layout_width="354dp"
         android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Voltar"
+        android:textColor="@color/branco"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -133,12 +135,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtCep" />
 
-    <EditText
+    <TextView
         android:id="@+id/btnCadastrar"
         android:background="@drawable/button_border"
-        android:layout_width="243dp"
-        android:layout_height="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
         android:text="Cadastrar"
+        android:textColor="@color/branco"
         app:layout_constraintBottom_toBottomOf="@id/idConponents"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -147,6 +151,7 @@
 
     <TextView
         android:id="@+id/textView"
+        android:textColor="@color/branco"
         android:layout_width="210dp"
         android:layout_height="80dp"
         android:text="Cadastrar o condomínio"

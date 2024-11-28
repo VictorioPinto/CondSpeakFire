@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.condspeak.R
@@ -19,7 +20,7 @@ class CadastroCondominioActivity : AppCompatActivity(), CadastroView {
     private lateinit var CEP: EditText
     private lateinit var CNPJ: EditText
     private lateinit var numero: EditText
-    private lateinit var Cadastrar: EditText
+    private lateinit var Cadastrar: TextView
     private lateinit var nome: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {

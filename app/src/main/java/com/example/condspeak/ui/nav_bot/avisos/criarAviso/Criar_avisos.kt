@@ -45,7 +45,7 @@ class Criar_avisos : Fragment() {
         val view = inflater.inflate(R.layout.fragment_criar_avisos, container, false)
         val switch = view.findViewById<SwitchCompat>(R.id.swt)
 
-        val opcoes = arrayOf("Opção 1", "Opção 2", "Opção 3")
+        val opcoes = arrayOf("Reforma", "Eletricidade", "Pintor")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcoes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         val tituloTextView = view.findViewById<TextView>(R.id.titulo_aviso)
@@ -63,6 +63,7 @@ class Criar_avisos : Fragment() {
 
         tempofinal(spinner, novoTexto, fim)
         btnCriar.setOnClickListener {
+            novaimagem(spinner, image)
             if (switch.isChecked) {
                 val spinnerValue = spinner.selectedItem.toString()
                 val tempoinicio = inicio.text.toString()
@@ -125,11 +126,11 @@ class Criar_avisos : Fragment() {
     }
 
     private fun novaimagem(spinner: Spinner, image: ImageView) {
-        if (spinner.selectedItem.toString() == "Opção 1") {
+        if (spinner.selectedItem.toString() == "Reforma") {
             image.setImageResource(R.drawable.engenheiro)
-        }else if(spinner.selectedItem.toString() == "Opção 2"){
+        }else if(spinner.selectedItem.toString() == "Eletricidade"){
             image.setImageResource(R.drawable.eletricista)
-        }else if(spinner.selectedItem.toString() == "Opção 3"){
+        }else if(spinner.selectedItem.toString() == "Pintor"){
             image.setImageResource(R.drawable.pintpr)
         }
     }
@@ -142,7 +143,7 @@ class Criar_avisos : Fragment() {
             val timestamp = System.currentTimeMillis()
 
             val aviso = Aviso("aviso", titulo, mensagem, Timestamp.now(), "", "", "", "", usuarioId)
-            avisoViewModel.saveAvisoData(aviso) // Usa a instância do ViewModel
+            avisoViewModel.saveAvisoData(aviso)
         }
     }
     private fun salvardois(spinnerValue: String, dateinicio: String, datefim: String) {
@@ -152,18 +153,17 @@ class Criar_avisos : Fragment() {
             val usuarioId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
             val timestamp = System.currentTimeMillis()
 
-            if (spinnerValue == "Opção 1") {
-                val image = "@drawable/engenheiro"
-                val aviso = Aviso("aviso2", "", "", Timestamp.now(), image, spinnerValue, dateinicio, datefim,usuarioId)
-                avisoViewModel.saveAvisoData(aviso)
-            }
+
+            val aviso = Aviso("aviso", "", "", Timestamp.now(), "", spinnerValue, dateinicio, datefim,usuarioId)
+            avisoViewModel.saveAvisoData(aviso)
+
 
         }
     }
 }
 
 private fun tempofinal(spinner: Spinner, novoTexto: String, fim: EditText) {
-    if (spinner.selectedItem.toString() == "Opção 1") {
+    if (spinner.selectedItem.toString() == "Reforma") {
         val formatoData = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         if (novoTexto.matches(Regex("\\d{2}/\\d{2}/\\d{4}"))) {
             try {
@@ -182,7 +182,7 @@ private fun tempofinal(spinner: Spinner, novoTexto: String, fim: EditText) {
 
         }
     }
-    if (spinner.selectedItem.toString() == "Opção 2") {
+    if (spinner.selectedItem.toString() == "Eletricidade") {
         val formatoData = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         if (novoTexto.matches(Regex("\\d{2}/\\d{2}/\\d{4}"))) {
             try {
@@ -197,28 +197,25 @@ private fun tempofinal(spinner: Spinner, novoTexto: String, fim: EditText) {
             } catch (e: ParseException) {
 
             }
-        } else {
+        } else  if (spinner.selectedItem.toString() == "Pintor") {
+            val formatoData = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            if (novoTexto.matches(Regex("\\d{2}/\\d{2}/\\d{4}"))) {
+                try {
+                    val dataInicial = formatoData.parse(novoTexto)
+                    if (dataInicial != null) {
+                        val calendar = Calendar.getInstance()
+                        calendar.time = dataInicial
+                        calendar.add(Calendar.DAY_OF_MONTH, 5)
+                        val novaData = calendar.time
+                        fim.setText(formatoData.format(novaData))
+                    }
+                } catch (e: ParseException) {
 
-        }
-    }
-    if (spinner.selectedItem.toString() == "Opção 3") {
-        val formatoData = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-        if (novoTexto.matches(Regex("\\d{2}/\\d{2}/\\d{4}"))) {
-            try {
-                val dataInicial = formatoData.parse(novoTexto)
-                if (dataInicial != null) {
-                    val calendar = Calendar.getInstance()
-                    calendar.time = dataInicial
-                    calendar.add(Calendar.DAY_OF_MONTH, 5)
-                    val novaData = calendar.time
-                    fim.setText(formatoData.format(novaData))
                 }
-            } catch (e: ParseException) {
-
             }
-        } else {
-
         }
     }
+
+
 
 }

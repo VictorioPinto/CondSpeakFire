@@ -20,7 +20,7 @@ class Codigo_Condominio : AppCompatActivity() {
     private val viewModel = CodigoCondominioViewModel(repository) // Instanciando o ViewModel diretamente
 
     private lateinit var code: EditText
-    private lateinit var entrar: EditText
+    private lateinit var entrar: TextView
     private lateinit var cadastrarnocondominio: TextView
 
 

@@ -81,13 +81,13 @@
         app:layout_constraintTop_toBottomOf="@+id/txtCpfPerfil"
         app:layout_constraintBottom_toTopOf="@+id/btnDeletarUser" />
 
-    <EditText
+    <TextView
         android:id="@+id/btnDeletarUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_border"
         android:padding="15dp"
-        android:text="Atualizar Conta"
+        android:text="Deletar conta"
         android:textColor="@color/branco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

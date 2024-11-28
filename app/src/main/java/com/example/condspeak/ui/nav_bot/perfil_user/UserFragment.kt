@@ -27,7 +27,7 @@ class UserFragment : Fragment() {
     private lateinit var email: TextView
     private lateinit var cpf: TextView
     private lateinit var telefone: TextView
-    private lateinit var btndeletar: EditText
+    private lateinit var btndeletar: TextView
     private lateinit var btneditar: ImageView
 
     override fun onCreateView(

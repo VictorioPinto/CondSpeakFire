@@ -3,9 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cinza"
     tools:context=".ui.nav_bot.avisos.quadrodeavisos.AvisosFragment">
-
+    <TextView
+        android:id="@+id/addaviso"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="+"
+        android:textColor="@color/branco"
+        android:layout_marginLeft="180dp"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_border"
+        />
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="50dp"
         android:id="@+id/recyclerViewAviso"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
